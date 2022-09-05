@@ -111,12 +111,7 @@ function fromObject(obj) {
   if (typeof obj === "object") {
     const item = {};
     Object.keys(obj).forEach((key) => {
-      if (
-        !Array.isArray(obj[key]) &&
-        !Buffer.isBuffer(obj[key]) &&
-        !obj[key] instanceof Set &&
-        typeof obj[key] === "object"
-      ) {
+      if (isPOJO(obj[key])) {
         item[key] = { M: fromObject(obj[key]) };
       } else {
         item[key] = fromObject(obj[key]);
@@ -124,11 +119,19 @@ function fromObject(obj) {
     });
     return item;
   }
+}
 
-  console.log("NO MATCHES");
+function isPOJO(obj) {
+  return (
+    !Array.isArray(obj) &&
+    !Buffer.isBuffer(obj) &&
+    !(obj instanceof Set) &&
+    typeof obj === "object"
+  );
 }
 
 module.exports = {
   toObject,
   fromObject,
+  isPOJO,
 };

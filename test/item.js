@@ -67,11 +67,69 @@ describe("Item.toObject", () => {
     const parsed = Item.toObject({ key: { S: "value" } });
     expect(parsed).to.deep.equal({ key: "value" });
   });
+
+  it("works with deeply nested maps", () => {
+    const parsed = Item.toObject({
+      key: { S: "value" },
+      otherKey: { N: 45 },
+      nested: {
+        M: {
+          objects: {
+            M: { also: { L: [{ S: "serialize" }, { S: "correctly" }] } },
+          },
+        },
+      },
+    });
+
+    expect(parsed).to.deep.equal({
+      key: "value",
+      otherKey: 45,
+      nested: { objects: { also: ["serialize", "correctly"] } },
+    });
+  });
 });
 
 describe("Item.fromObject", () => {
-  it("works for maps #1", () => {
-    const item = Item.fromObject({ key: "value" });
-    expect(item).to.deep.equal({ key: { S: "value" } });
+  it("works flat objects", () => {
+    const item = Item.fromObject({ key: "value", otherKey: 45 });
+    expect(item).to.deep.equal({ key: { S: "value" }, otherKey: { N: 45 } });
+  });
+
+  it("works for deeply nested objects", () => {
+    const item = Item.fromObject({
+      key: "value",
+      otherKey: 45,
+      nested: { objects: { also: ["serialize", "correctly"] } },
+    });
+    expect(item).to.deep.equal({
+      key: { S: "value" },
+      otherKey: { N: 45 },
+      nested: {
+        M: {
+          objects: {
+            M: { also: { L: [{ S: "serialize" }, { S: "correctly" }] } },
+          },
+        },
+      },
+    });
+  });
+});
+
+describe("isPOJO", () => {
+  it("returns false for arrays", () => {
+    expect(Item.isPOJO([])).to.be.false;
+  });
+
+  it("returns false for sets", () => {
+    expect(Item.isPOJO(new Set())).to.be.false;
+  });
+
+  it("returns false for buffers", () => {
+    expect(Item.isPOJO(Buffer.alloc(10))).to.be.false;
+  });
+
+  it("returns true for objects", () => {
+    expect(Item.isPOJO({ objects: { also: ["serialize", "correctly"] } })).to.be
+      .true;
   });
 });
