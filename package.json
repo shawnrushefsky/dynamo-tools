@@ -1,0 +1,30 @@
+{
+  "name": "dynamo-tools",
+  "version": "1.0.0",
+  "description": "Some helpful abstractions for interacting with dynamodb",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --recursive --require test/env.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shawnrushefsky/dynamo-tools.git"
+  },
+  "keywords": [
+    "dynamodb",
+    "aws"
+  ],
+  "author": "Shawn Rushefsky",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shawnrushefsky/dynamo-tools/issues"
+  },
+  "homepage": "https://github.com/shawnrushefsky/dynamo-tools#readme",
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.163.0"
+  },
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0"
+  }
+}
