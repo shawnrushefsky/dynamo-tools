@@ -5,7 +5,6 @@ const {
   CreateTableCommand,
   DeleteTableCommand,
   GetItemCommand,
-  BatchWriteItemCommand,
 } = require("@aws-sdk/client-dynamodb");
 
 const cache = new Cache({ endpoint: process.env.DYNAMO_ENDPOINT });
