@@ -6,6 +6,7 @@ const {
   ScanCommand,
   DescribeTableCommand,
   BatchWriteItemCommand,
+  QueryCommand,
 } = require("@aws-sdk/client-dynamodb");
 const { toObject, fromObject } = require("./Item");
 
@@ -97,6 +98,67 @@ class Cache {
     const desc = new DescribeTableCommand({ TableName: table });
     const { Table } = await this.client.send(desc);
     return Table.KeySchema.map(({ AttributeName }) => AttributeName);
+  }
+
+  async putMany({ table, items }) {
+    const batches = this._chunk(items, 25);
+    return Promise.all(
+      batches.map((batch) => {
+        const cmd = new BatchWriteItemCommand({
+          RequestItems: {
+            [table]: batch.map((item) => ({
+              PutRequest: {
+                Item: fromObject(item),
+              },
+            })),
+          },
+        });
+        return this.client.send(cmd);
+      })
+    );
+  }
+
+  async query({ table, match, range, consistentRead = false, limit = 100 }) {
+    const items = [];
+    let last;
+    do {
+      const { Items, LastEvaluatedKey } = await this._query({
+        table,
+        match,
+        range,
+        consistentRead,
+        limit,
+        start: last,
+      });
+      items.push(...Items);
+      last = LastEvaluatedKey;
+    } while (last);
+
+    return items;
+  }
+
+  async _query({
+    table,
+    match,
+    range,
+    consistentRead = false,
+    limit = 100,
+    start,
+  }) {
+    const params = {
+      TableName: table,
+      ConsistentRead: consistentRead,
+      Limit: limit,
+    };
+    if (match) {
+      params.KeyConditionExpression = "#S = :val";
+      params.ExpressionAttributeNames = { "#S": Object.keys(match)[0] };
+      params.ExpressionAttributeValues = { ":val": Object.values[match][0] };
+    } else if (range) {
+      // TODO: Implement range expressions
+    }
+    const cmd = new QueryCommand(params);
+    return this.client.send(cmd);
   }
 
   _chunk(array, chunkSize) {

@@ -130,4 +130,21 @@ describe("Cache", () => {
       expect(allItems.length).to.equal(5);
     });
   });
+
+  describe("putMany", () => {
+    it("inserts many items into a dynamo table", async () => {
+      const items = [];
+      for (let i = 0; i < 100; i++) {
+        items.push({
+          [primaryKey]: `something${i}`,
+          something: `other${i * 10}`,
+        });
+      }
+
+      await cache.putMany({ table, items });
+
+      const allItems = await cache.getAll({ table });
+      expect(allItems.length).to.equal(100);
+    });
+  });
 });
