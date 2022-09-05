@@ -45,23 +45,6 @@ class Cache {
     return this.client.send(cmd);
   }
 
-  async _scan({ table, keysToReturn = [], start }) {
-    const params = { TableName: table, ExclusiveStartKey: start };
-    if (keysToReturn.length > 0) {
-      params.Select = "SPECIFIC_ATTRIBUTES";
-      params.ProjectionExpression = keysToReturn
-        .map((_, i) => `#K${i}`)
-        .join(",");
-      params.ExpressionAttributeNames = {};
-      keysToReturn.forEach(
-        (key, i) => (params.ExpressionAttributeNames[`#K${i}`] = key)
-      );
-    }
-
-    const cmd = new ScanCommand(params);
-    return this.client.send(cmd);
-  }
-
   async getAll({ table, keysToReturn = [] }) {
     const items = [];
     let last;
@@ -78,22 +61,8 @@ class Cache {
     return items;
   }
 
-  _chunk(array, chunkSize) {
-    const chunks = [];
-    if (chunkSize === 0 || array.length === 0) {
-      return chunks;
-    }
-    for (let i = 0; i < array.length; i += chunkSize) {
-      const chunk = array.slice(i, i + chunkSize);
-      chunks.push(chunk);
-    }
-    return chunks;
-  }
-
   async deleteAll({ table }) {
-    const desc = new DescribeTableCommand({ TableName: table });
-    const { Table } = await this.client.send(desc);
-    const keys = Table.KeySchema.map(({ AttributeName }) => AttributeName);
+    const keys = await this.getPrimaryKeys({ table });
     const items = [];
     let last;
     do {
@@ -122,6 +91,41 @@ class Cache {
         return this.client.send(cmd);
       })
     );
+  }
+
+  async getPrimaryKeys({ table }) {
+    const desc = new DescribeTableCommand({ TableName: table });
+    const { Table } = await this.client.send(desc);
+    return Table.KeySchema.map(({ AttributeName }) => AttributeName);
+  }
+
+  _chunk(array, chunkSize) {
+    const chunks = [];
+    if (chunkSize === 0 || array.length === 0) {
+      return chunks;
+    }
+    for (let i = 0; i < array.length; i += chunkSize) {
+      const chunk = array.slice(i, i + chunkSize);
+      chunks.push(chunk);
+    }
+    return chunks;
+  }
+
+  async _scan({ table, keysToReturn = [], start }) {
+    const params = { TableName: table, ExclusiveStartKey: start };
+    if (keysToReturn.length > 0) {
+      params.Select = "SPECIFIC_ATTRIBUTES";
+      params.ProjectionExpression = keysToReturn
+        .map((_, i) => `#K${i}`)
+        .join(",");
+      params.ExpressionAttributeNames = {};
+      keysToReturn.forEach(
+        (key, i) => (params.ExpressionAttributeNames[`#K${i}`] = key)
+      );
+    }
+
+    const cmd = new ScanCommand(params);
+    return this.client.send(cmd);
   }
 }
 

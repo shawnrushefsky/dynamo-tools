@@ -12,7 +12,7 @@ const cache = new Cache({ endpoint: process.env.DYNAMO_ENDPOINT });
 const table = "tests";
 const primaryKey = "primary_key";
 
-describe.only("Cache", () => {
+describe("Cache", () => {
   before(async () => {
     const cmd = new CreateTableCommand({
       TableName: table,
