@@ -5,6 +5,7 @@ const {
   CreateTableCommand,
   DeleteTableCommand,
   GetItemCommand,
+  BatchWriteItemCommand,
 } = require("@aws-sdk/client-dynamodb");
 
 const cache = new Cache({ endpoint: process.env.DYNAMO_ENDPOINT });
@@ -40,6 +41,10 @@ describe.only("Cache", () => {
     await cache.client.send(cmd);
   });
 
+  beforeEach(async () => {
+    await cache.deleteAll({ table });
+  });
+
   describe("putOne", () => {
     it("sets one item in dynamodb", async () => {
       await cache.putOne({
@@ -71,6 +76,59 @@ describe.only("Cache", () => {
         key: { [primaryKey]: "value" },
       });
       expect(item).to.deep.equal({ [primaryKey]: "value", something: "other" });
+    });
+
+    it("returns undefined if nothing is found", async () => {
+      await cache.putOne({
+        table,
+        item: { [primaryKey]: "value", something: "other" },
+      });
+
+      const item = await cache.getOne({
+        table,
+        key: { [primaryKey]: "wrong" },
+      });
+      expect(item).to.be.undefined;
+    });
+  });
+
+  describe("deleteOne", () => {
+    it("deletes one item from dynamodb", async () => {
+      await cache.putOne({
+        table,
+        item: { [primaryKey]: "value", something: "other" },
+      });
+
+      await cache.deleteOne({ table, key: { [primaryKey]: "value" } });
+
+      const item = await cache.getOne({
+        table,
+        key: { [primaryKey]: "value" },
+      });
+
+      expect(item).to.be.undefined;
+    });
+  });
+
+  describe("getAll", () => {
+    it("returns all items in a table", async () => {
+      const inserts = [];
+      for (let i = 0; i < 5; i++) {
+        inserts.push(
+          cache.putOne({
+            table,
+            item: {
+              [primaryKey]: `something${i}`,
+              something: `other${i * 10}`,
+            },
+          })
+        );
+      }
+
+      await Promise.all(inserts);
+
+      const allItems = await cache.getAll({ table });
+      expect(allItems.length).to.equal(5);
     });
   });
 });
