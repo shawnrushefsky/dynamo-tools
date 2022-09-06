@@ -7,6 +7,7 @@ const {
   DescribeTableCommand,
   BatchWriteItemCommand,
   QueryCommand,
+  UpdateItemCommand,
 } = require("@aws-sdk/client-dynamodb");
 const { toObject, fromObject } = require("./Item");
 
@@ -137,7 +138,25 @@ class Cache {
     return items;
   }
 
-  async updateOne({ table, match, amount }) {}
+  async updateOne({ table, match, update, returnValues = "NONE" }) {
+    const params = {
+      TableName: table,
+      Key: fromObject(match),
+      UpdateExpression: `SET ${Object.keys(update)
+        .map((_, i) => `#K${i}=:val${i}`)
+        .join(",")}`,
+      ExpressionAttributeNames: {},
+      ExpressionAttributeValues: {},
+      ReturnValues: returnValues,
+    };
+    Object.keys(update).forEach((key, i) => {
+      params.ExpressionAttributeNames[`#K${i}`] = key;
+      params.ExpressionAttributeValues[`:val${i}`] = fromObject(update[key]);
+    });
+    const cmd = new UpdateItemCommand(params);
+    const { Attributes } = await this.client.send(cmd);
+    return toObject(Attributes);
+  }
 
   async _query({ table, match, range, indexName, limit = 100, start }) {
     const params = {
