@@ -118,7 +118,7 @@ class Cache {
     );
   }
 
-  async query({ table, match, range, consistentRead = false, limit = 100 }) {
+  async query({ table, match, range, indexName, limit = 100 }) {
     const items = [];
     let last;
     do {
@@ -126,34 +126,35 @@ class Cache {
         table,
         match,
         range,
-        consistentRead,
+        indexName,
         limit,
         start: last,
       });
-      items.push(...Items);
+      items.push(...Items.map(toObject));
       last = LastEvaluatedKey;
     } while (last);
 
     return items;
   }
 
-  async _query({
-    table,
-    match,
-    range,
-    consistentRead = false,
-    limit = 100,
-    start,
-  }) {
+  async _query({ table, match, range, indexName, limit = 100, start }) {
     const params = {
       TableName: table,
-      ConsistentRead: consistentRead,
       Limit: limit,
+      ExclusiveStartKey: start,
     };
     if (match) {
+      if (Object.keys(match).length > 1) {
+        throw new Error(
+          "Match must have exactly one key, which must be am indexed key"
+        );
+      }
+      params.IndexName = indexName || Object.keys(match)[0];
       params.KeyConditionExpression = "#S = :val";
       params.ExpressionAttributeNames = { "#S": Object.keys(match)[0] };
-      params.ExpressionAttributeValues = { ":val": Object.values[match][0] };
+      params.ExpressionAttributeValues = {
+        ":val": fromObject(Object.values(match)[0]),
+      };
     } else if (range) {
       // TODO: Implement range expressions
     }

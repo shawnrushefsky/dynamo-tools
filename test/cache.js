@@ -11,6 +11,7 @@ const cache = new Cache({ endpoint: process.env.DYNAMO_ENDPOINT });
 
 const table = "tests";
 const primaryKey = "primary_key";
+const secondaryKey = "secondary_key";
 
 describe("Cache", () => {
   before(async () => {
@@ -26,6 +27,24 @@ describe("Cache", () => {
         {
           AttributeName: primaryKey,
           AttributeType: "S",
+        },
+        {
+          AttributeName: secondaryKey,
+          AttributeType: "S",
+        },
+      ],
+      GlobalSecondaryIndexes: [
+        {
+          IndexName: secondaryKey,
+          KeySchema: [
+            {
+              AttributeName: secondaryKey,
+              KeyType: "HASH",
+            },
+          ],
+          Projection: {
+            ProjectionType: "ALL",
+          },
         },
       ],
       BillingMode: "PAY_PER_REQUEST",
@@ -145,6 +164,32 @@ describe("Cache", () => {
 
       const allItems = await cache.getAll({ table });
       expect(allItems.length).to.equal(100);
+    });
+  });
+
+  describe("query", () => {
+    it("returns all items with a value in a secondary index", async () => {
+      const users = ["user1", "user2", "user3"];
+      const items = [];
+      for (let i = 0; i < 100; i++) {
+        items.push({
+          [primaryKey]: `something${i}`,
+          [secondaryKey]: users[i % 3],
+        });
+      }
+
+      await cache.putMany({ table, items });
+      const queryResults = await cache.query({
+        table,
+        match: { [secondaryKey]: "user1" },
+      });
+
+      expect(queryResults.length).to.equal(34);
+
+      const totalUsersReturned = new Set(
+        queryResults.map((result) => result[secondaryKey])
+      ).size;
+      expect(totalUsersReturned).to.equal(1);
     });
   });
 });
