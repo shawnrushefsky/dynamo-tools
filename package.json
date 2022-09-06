@@ -1,6 +1,6 @@
 {
   "name": "dynamo-tools",
-  "version": "1.0.0",
+  "version": "0.8.0",
   "description": "Some helpful abstractions for interacting with dynamodb",
   "main": "index.js",
   "scripts": {
