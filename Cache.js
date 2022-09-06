@@ -15,10 +15,10 @@ class Cache {
     this.client = new DynamoDBClient(clientConfig);
   }
 
-  async getOne({ table, key, consistentRead = false }) {
+  async getOne({ table, match, consistentRead = false }) {
     const cmd = new GetItemCommand({
       TableName: table,
-      Key: fromObject(key),
+      Key: fromObject(match),
       ConsistentRead: consistentRead,
     });
 
@@ -38,10 +38,10 @@ class Cache {
     return this.client.send(cmd);
   }
 
-  async deleteOne({ table, key }) {
+  async deleteOne({ table, match }) {
     const cmd = new DeleteItemCommand({
       TableName: table,
-      Key: fromObject(key),
+      Key: fromObject(match),
     });
     return this.client.send(cmd);
   }
@@ -136,6 +136,8 @@ class Cache {
 
     return items;
   }
+
+  async updateOne({ table, match, amount }) {}
 
   async _query({ table, match, range, indexName, limit = 100, start }) {
     const params = {

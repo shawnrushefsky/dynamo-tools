@@ -91,7 +91,7 @@ describe("Cache", () => {
 
       const item = await cache.getOne({
         table,
-        key: { [primaryKey]: "value" },
+        match: { [primaryKey]: "value" },
       });
       expect(item).to.deep.equal({ [primaryKey]: "value", something: "other" });
     });
@@ -104,7 +104,7 @@ describe("Cache", () => {
 
       const item = await cache.getOne({
         table,
-        key: { [primaryKey]: "wrong" },
+        match: { [primaryKey]: "wrong" },
       });
       expect(item).to.be.undefined;
     });
@@ -117,11 +117,11 @@ describe("Cache", () => {
         item: { [primaryKey]: "value", something: "other" },
       });
 
-      await cache.deleteOne({ table, key: { [primaryKey]: "value" } });
+      await cache.deleteOne({ table, match: { [primaryKey]: "value" } });
 
       const item = await cache.getOne({
         table,
-        key: { [primaryKey]: "value" },
+        match: { [primaryKey]: "value" },
       });
 
       expect(item).to.be.undefined;
