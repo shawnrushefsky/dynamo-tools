@@ -74,7 +74,7 @@ function fromObject(obj) {
   }
 
   if (typeof obj === "number" || (typeof obj === "string" && !isNaN(obj))) {
-    return { N: Number(obj) };
+    return { N: obj.toString() };
   }
 
   if (Buffer.isBuffer(obj)) {

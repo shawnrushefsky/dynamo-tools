@@ -92,7 +92,7 @@ describe("Item.toObject", () => {
 describe("Item.fromObject", () => {
   it("works flat objects", () => {
     const item = Item.fromObject({ key: "value", otherKey: 45 });
-    expect(item).to.deep.equal({ key: { S: "value" }, otherKey: { N: 45 } });
+    expect(item).to.deep.equal({ key: { S: "value" }, otherKey: { N: "45" } });
   });
 
   it("works for deeply nested objects", () => {
@@ -103,7 +103,7 @@ describe("Item.fromObject", () => {
     });
     expect(item).to.deep.equal({
       key: { S: "value" },
-      otherKey: { N: 45 },
+      otherKey: { N: "45" },
       nested: {
         M: {
           objects: {
