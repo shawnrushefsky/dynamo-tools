@@ -1,5 +1,5 @@
 const Cache = require("../Cache");
-const { fromObject } = require("../Item");
+const { fromObject, toObject } = require("../Item");
 const { expect } = require("chai");
 const {
   CreateTableCommand,
@@ -79,6 +79,24 @@ describe("Cache", () => {
       expect(resp.Item).to.deep.equal(
         fromObject({ [primaryKey]: "value", something: "other" })
       );
+    });
+
+    it("sets one item in dynamodb with numbers", async () => {
+      await cache.putOne({
+        table,
+        item: { [primaryKey]: "value", something: 1 },
+      });
+
+      const cmd = new GetItemCommand({
+        TableName: table,
+        Key: fromObject({ [primaryKey]: "value" }),
+        ConsistentRead: true,
+      });
+      const resp = await cache.client.send(cmd);
+      expect(toObject(resp.Item)).to.deep.equal({
+        [primaryKey]: "value",
+        something: 1,
+      });
     });
   });
 

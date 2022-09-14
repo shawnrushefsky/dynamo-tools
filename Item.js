@@ -69,12 +69,12 @@ function fromObject(obj) {
     return;
   }
 
-  if (typeof obj === "string") {
+  if (typeof obj === "string" && isNaN(obj)) {
     return { S: obj };
   }
 
-  if (typeof obj === "number") {
-    return { N: obj };
+  if (typeof obj === "number" || (typeof obj === "string" && !isNaN(obj))) {
+    return { N: Number(obj) };
   }
 
   if (Buffer.isBuffer(obj)) {
