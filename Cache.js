@@ -138,6 +138,18 @@ class Cache {
     return items;
   }
 
+  async queryPage({ table, match, range, indexName, lastKey, limit = 100 }) {
+    const { Items, LastEvaluatedKey } = await this._query({
+      table,
+      match,
+      range,
+      indexName,
+      limit,
+      start: lastKey,
+    });
+    return { items: Items.map(toObject), lastKey: LastEvaluatedKey };
+  }
+
   async updateOne({ table, match, update, returnValues = "NONE" }) {
     const params = {
       TableName: table,
