@@ -175,6 +175,9 @@ class Cache {
       TableName: table,
       Limit: limit,
       ExclusiveStartKey: start,
+      KeyConditionExpression: "",
+      ExpressionAttributeNames: {},
+      ExpressionAttributeValues: {},
     };
     if (match) {
       if (Object.keys(match).length > 1) {
@@ -184,13 +187,21 @@ class Cache {
       }
       params.IndexName = indexName || Object.keys(match)[0];
       params.KeyConditionExpression = "#S = :val";
-      params.ExpressionAttributeNames = { "#S": Object.keys(match)[0] };
-      params.ExpressionAttributeValues = {
-        ":val": fromObject(Object.values(match)[0]),
-      };
-    } else if (range) {
-      // TODO: Implement range expressions
+      params.ExpressionAttributeNames["#S"] = Object.keys(match)[0];
+      params.ExpressionAttributeValues[":val"] = fromObject(
+        Object.values(match)[0]
+      );
     }
+
+    if (range) {
+      const rangeKey = Object.keys(range)[0];
+      const comparison = Object.keys(range[rangeKey])[0];
+      const value = range[rangeKey][comparison];
+      params.KeyConditionExpression += ` AND #R ${comparison} :sortKeyVal`;
+      params.ExpressionAttributeNames["#R"] = rangeKey;
+      params.ExpressionAttributeValues[":sortKeyVal"] = fromObject(value);
+    }
+
     const cmd = new QueryCommand(params);
     return this.client.send(cmd);
   }

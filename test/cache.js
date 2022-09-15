@@ -12,6 +12,7 @@ const cache = new Cache({ endpoint: process.env.DYNAMO_ENDPOINT });
 const table = "tests";
 const primaryKey = "primary_key";
 const secondaryKey = "secondary_key";
+const sortKey = "sort_key";
 
 describe("Cache", () => {
   before(async () => {
@@ -32,6 +33,10 @@ describe("Cache", () => {
           AttributeName: secondaryKey,
           AttributeType: "S",
         },
+        {
+          AttributeName: sortKey,
+          AttributeType: "N",
+        },
       ],
       GlobalSecondaryIndexes: [
         {
@@ -40,6 +45,10 @@ describe("Cache", () => {
             {
               AttributeName: secondaryKey,
               KeyType: "HASH",
+            },
+            {
+              AttributeName: sortKey,
+              KeyType: "RANGE",
             },
           ],
           Projection: {
@@ -193,6 +202,7 @@ describe("Cache", () => {
         items.push({
           [primaryKey]: `something${i}`,
           [secondaryKey]: users[i % 3],
+          [sortKey]: i,
         });
       }
 
@@ -203,6 +213,32 @@ describe("Cache", () => {
       });
 
       expect(queryResults.length).to.equal(34);
+
+      const totalUsersReturned = new Set(
+        queryResults.map((result) => result[secondaryKey])
+      ).size;
+      expect(totalUsersReturned).to.equal(1);
+    });
+
+    it("returns all items with a value in a secondary index w/ range", async () => {
+      const users = ["user1", "user2", "user3"];
+      const items = [];
+      for (let i = 0; i < 100; i++) {
+        items.push({
+          [primaryKey]: `something${i}`,
+          [secondaryKey]: users[i % 3],
+          [sortKey]: i,
+        });
+      }
+
+      await cache.putMany({ table, items });
+      const queryResults = await cache.query({
+        table,
+        match: { [secondaryKey]: "user1" },
+        range: { [sortKey]: { ">": 50 } },
+      });
+
+      expect(queryResults.length).to.equal(17);
 
       const totalUsersReturned = new Set(
         queryResults.map((result) => result[secondaryKey])
