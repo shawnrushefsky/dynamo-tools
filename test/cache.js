@@ -247,6 +247,43 @@ describe("Cache", () => {
     });
   });
 
+  describe("queryPage", () => {
+    it("returns a page of items with a value in a secondary index", async () => {
+      const users = ["user1", "user2", "user3"];
+      const items = [];
+      for (let i = 0; i < 100; i++) {
+        items.push({
+          [primaryKey]: `something${i}`,
+          [secondaryKey]: users[i % 3],
+          [sortKey]: i,
+        });
+      }
+
+      await cache.putMany({ table, items });
+      const queryResults = await cache.queryPage({
+        table,
+        match: { [secondaryKey]: "user1" },
+        limit: 10,
+      });
+
+      expect(queryResults.items.length).to.equal(10);
+
+      const totalUsersReturned = new Set(
+        queryResults.items.map((result) => result[secondaryKey])
+      ).size;
+      expect(totalUsersReturned).to.equal(1);
+
+      const qr2 = await cache.queryPage({
+        table,
+        match: { [secondaryKey]: "user1" },
+        lastKey: queryResults.lastKey,
+      });
+
+      expect(qr2.items.length).to.equal(24);
+      expect(qr2.lastKey).to.be.undefined;
+    });
+  });
+
   describe("updateOne", () => {
     it("merges an object into an existing item, and by default returns nothing", async () => {
       await cache.putOne({
