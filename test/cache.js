@@ -331,4 +331,57 @@ describe("Cache", () => {
       });
     });
   });
+
+  describe("increment", () => {
+    it("atomically increments one value in an item", async () => {
+      await cache.putOne({
+        table,
+        item: { [primaryKey]: "value", something: "other", [sortKey]: 1 },
+      });
+
+      let resp = await cache.increment({
+        table,
+        match: { [primaryKey]: "value" },
+        update: { [sortKey]: 5 },
+      });
+
+      expect(resp).to.deep.equal({ [sortKey]: 6 });
+
+      resp = await cache.increment({
+        table,
+        match: { [primaryKey]: "value" },
+        update: { [sortKey]: -2 },
+      });
+
+      expect(resp).to.deep.equal({ [sortKey]: 4 });
+    });
+
+    it("atomically increments multiple values in an item", async () => {
+      await cache.putOne({
+        table,
+        item: {
+          [primaryKey]: "value",
+          something: "other",
+          [sortKey]: 1,
+          num2: 1,
+        },
+      });
+
+      let resp = await cache.increment({
+        table,
+        match: { [primaryKey]: "value" },
+        update: { [sortKey]: 5, num2: -4 },
+      });
+
+      expect(resp).to.deep.equal({ [sortKey]: 6, num2: -3 });
+
+      resp = await cache.increment({
+        table,
+        match: { [primaryKey]: "value" },
+        update: { [sortKey]: -2, num2: 3 },
+      });
+
+      expect(resp).to.deep.equal({ [sortKey]: 4, num2: 0 });
+    });
+  });
 });

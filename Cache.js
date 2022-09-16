@@ -170,6 +170,27 @@ class Cache {
     return toObject(Attributes);
   }
 
+  async increment({ table, match, update, returnValues = "UPDATED_NEW" }) {
+    const params = {
+      TableName: table,
+      Key: fromObject(match),
+      UpdateExpression: `SET ${Object.keys(update)
+        .map((_, i) => `#K${i} = #K${i} + :val${i}`)
+        .join(",")}`,
+      ExpressionAttributeNames: {},
+      ExpressionAttributeValues: {},
+      ReturnValues: returnValues,
+    };
+
+    Object.keys(update).forEach((key, i) => {
+      params.ExpressionAttributeNames[`#K${i}`] = key;
+      params.ExpressionAttributeValues[`:val${i}`] = fromObject(update[key]);
+    });
+    const cmd = new UpdateItemCommand(params);
+    const { Attributes } = await this.client.send(cmd);
+    return toObject(Attributes);
+  }
+
   async _query({ table, match, range, indexName, limit = 100, start }) {
     const params = {
       TableName: table,
