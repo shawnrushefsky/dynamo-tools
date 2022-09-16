@@ -119,7 +119,14 @@ class Cache {
     );
   }
 
-  async query({ table, match, range, indexName, limit = 100 }) {
+  async query({
+    table,
+    match,
+    range,
+    indexName,
+    limit = 100,
+    ascending = true,
+  }) {
     const items = [];
     let last;
     do {
@@ -130,6 +137,7 @@ class Cache {
         indexName,
         limit,
         start: last,
+        ascending,
       });
       items.push(...Items.map(toObject));
       last = LastEvaluatedKey;
@@ -138,7 +146,15 @@ class Cache {
     return items;
   }
 
-  async queryPage({ table, match, range, indexName, lastKey, limit = 100 }) {
+  async queryPage({
+    table,
+    match,
+    range,
+    indexName,
+    lastKey,
+    limit = 100,
+    ascending = true,
+  }) {
     const { Items, LastEvaluatedKey } = await this._query({
       table,
       match,
@@ -146,6 +162,7 @@ class Cache {
       indexName,
       limit,
       start: lastKey,
+      ascending,
     });
     return { items: Items.map(toObject), lastKey: LastEvaluatedKey };
   }
@@ -191,11 +208,20 @@ class Cache {
     return toObject(Attributes);
   }
 
-  async _query({ table, match, range, indexName, limit = 100, start }) {
+  async _query({
+    table,
+    match,
+    range,
+    indexName,
+    limit = 100,
+    start,
+    ascending = true,
+  }) {
     const params = {
       TableName: table,
       Limit: limit,
       ExclusiveStartKey: start,
+      ScanIndexForward: ascending,
       KeyConditionExpression: "",
       ExpressionAttributeNames: {},
       ExpressionAttributeValues: {},
