@@ -113,6 +113,27 @@ describe("Item.fromObject", () => {
       },
     });
   });
+
+  it("works for objects with undefined values", () => {
+    let seed;
+    const item = Item.fromObject({
+      key: "value",
+      otherKey: 45,
+      nested: { objects: { also: ["serialize", "correctly"] } },
+      seed,
+    });
+    expect(item).to.deep.equal({
+      key: { S: "value" },
+      otherKey: { N: "45" },
+      nested: {
+        M: {
+          objects: {
+            M: { also: { L: [{ S: "serialize" }, { S: "correctly" }] } },
+          },
+        },
+      },
+    });
+  });
 });
 
 describe("isPOJO", () => {

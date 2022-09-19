@@ -1,5 +1,5 @@
 function toObject(dynamoItem) {
-  if (!dynamoItem) {
+  if (typeof dynamoItem === "undefined") {
     return;
   }
 
@@ -115,6 +115,9 @@ function fromObject(obj) {
         item[key] = { M: fromObject(obj[key]) };
       } else {
         item[key] = fromObject(obj[key]);
+      }
+      if (typeof item[key] === "undefined") {
+        delete item[key];
       }
     });
     return item;
