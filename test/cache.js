@@ -384,6 +384,29 @@ describe("Cache", () => {
       expect(resp).to.deep.equal({ [sortKey]: 4 });
     });
 
+    it("initialized and increments a value in an item", async () => {
+      await cache.putOne({
+        table,
+        item: { [primaryKey]: "value", something: "other" },
+      });
+
+      let resp = await cache.increment({
+        table,
+        match: { [primaryKey]: "value" },
+        update: { [sortKey]: 5 },
+      });
+
+      expect(resp).to.deep.equal({ [sortKey]: 5 });
+
+      resp = await cache.increment({
+        table,
+        match: { [primaryKey]: "value" },
+        update: { [sortKey]: -2 },
+      });
+
+      expect(resp).to.deep.equal({ [sortKey]: 3 });
+    });
+
     it("atomically increments multiple values in an item", async () => {
       await cache.putOne({
         table,

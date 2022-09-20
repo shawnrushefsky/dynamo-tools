@@ -191,8 +191,8 @@ class Cache {
     const params = {
       TableName: table,
       Key: fromObject(match),
-      UpdateExpression: `SET ${Object.keys(update)
-        .map((_, i) => `#K${i} = #K${i} + :val${i}`)
+      UpdateExpression: `ADD ${Object.keys(update)
+        .map((_, i) => `#K${i} :val${i}`)
         .join(",")}`,
       ExpressionAttributeNames: {},
       ExpressionAttributeValues: {},
