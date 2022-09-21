@@ -31,10 +31,11 @@ class Cache {
     return toObject(response.Item);
   }
 
-  async putOne({ table, item }) {
+  async putOne({ table, item, returnValues = "NONE" }) {
     const cmd = new PutItemCommand({
       TableName: table,
       Item: fromObject(item),
+      ReturnValues: returnValues,
     });
     return this.client.send(cmd);
   }
@@ -167,7 +168,7 @@ class Cache {
     return { items: Items.map(toObject), lastKey: LastEvaluatedKey };
   }
 
-  async updateOne({ table, match, update, returnValues = "NONE" }) {
+  async updateOne({ table, match, update, returnValues = "NONE", condition }) {
     const params = {
       TableName: table,
       Key: fromObject(match),
@@ -182,6 +183,14 @@ class Cache {
       params.ExpressionAttributeNames[`#K${i}`] = key;
       params.ExpressionAttributeValues[`:val${i}`] = fromObject(update[key]);
     });
+    if (condition) {
+      const conditionKey = Object.keys(condition)[0];
+      const comparison = Object.keys(condition[conditionKey])[0];
+      const value = condition[conditionKey][comparison];
+      params.ConditionExpression = `#C ${comparison} :conVal`;
+      params.ExpressionAttributeNames["#C"] = conditionKey;
+      params.ExpressionAttributeValues[":conVal"] = fromObject(value);
+    }
     const cmd = new UpdateItemCommand(params);
     const { Attributes } = await this.client.send(cmd);
     return toObject(Attributes);

@@ -358,6 +358,46 @@ describe("Cache", () => {
         alsoANewKey: "boop",
       });
     });
+
+    it("throws when a conditional update fails", async () => {
+      await cache.putOne({
+        table,
+        item: { [primaryKey]: "value", something: "other" },
+      });
+
+      try {
+        await cache.updateOne({
+          table,
+          match: { [primaryKey]: "value" },
+          update: { author_favorite: true },
+          condition: { something: { "=": "other3" } },
+          returnValues: "ALL_NEW",
+        });
+        expect.fail();
+      } catch (e) {
+        expect(e.message).to.match(/conditional request failed/i);
+      }
+    });
+
+    it("updates when a conditional update succeeds", async () => {
+      await cache.putOne({
+        table,
+        item: { [primaryKey]: "value", something: "other" },
+      });
+
+      const resp = await cache.updateOne({
+        table,
+        match: { [primaryKey]: "value" },
+        update: { author_favorite: true },
+        condition: { something: { "=": "other" } },
+        returnValues: "ALL_NEW",
+      });
+      expect(resp).to.deep.equal({
+        [primaryKey]: "value",
+        something: "other",
+        author_favorite: true,
+      });
+    });
   });
 
   describe("increment", () => {

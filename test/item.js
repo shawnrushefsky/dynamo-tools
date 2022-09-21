@@ -20,10 +20,10 @@ describe("Item.toObject", () => {
   });
 
   it("works for boolean", () => {
-    let parsed = Item.toObject({ BOOL: "true" });
+    let parsed = Item.toObject({ BOOL: true });
     expect(parsed).to.be.true;
 
-    parsed = Item.toObject({ BOOL: "false" });
+    parsed = Item.toObject({ BOOL: false });
     expect(parsed).to.be.false;
   });
 
@@ -125,6 +125,29 @@ describe("Item.fromObject", () => {
     expect(item).to.deep.equal({
       key: { S: "value" },
       otherKey: { N: "45" },
+      nested: {
+        M: {
+          objects: {
+            M: { also: { L: [{ S: "serialize" }, { S: "correctly" }] } },
+          },
+        },
+      },
+    });
+  });
+
+  it("works for objects with boolean values", () => {
+    let seed;
+    const item = Item.fromObject({
+      key: "value",
+      otherKey: 45,
+      favorite: true,
+      nested: { objects: { also: ["serialize", "correctly"] } },
+      seed,
+    });
+    expect(item).to.deep.equal({
+      key: { S: "value" },
+      otherKey: { N: "45" },
+      favorite: { BOOL: true },
       nested: {
         M: {
           objects: {

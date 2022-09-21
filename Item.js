@@ -19,8 +19,8 @@ function toObject(dynamoItem) {
     return Buffer.from(dynamoItem.B, "base64");
   }
 
-  if (dynamoItem.BOOL) {
-    return dynamoItem.BOOL === "true";
+  if (dynamoItem.hasOwnProperty("BOOL")) {
+    return dynamoItem.BOOL;
   }
 
   if (dynamoItem.NULL) {
@@ -82,7 +82,7 @@ function fromObject(obj) {
   }
 
   if (typeof obj === "boolean") {
-    return { BOOL: obj.toString() };
+    return { BOOL: obj };
   }
 
   if (obj === null) {
