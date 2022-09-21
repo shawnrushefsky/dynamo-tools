@@ -310,6 +310,39 @@ describe("Cache", () => {
       expect(qr2.items.length).to.equal(24);
       expect(qr2.lastKey).to.be.undefined;
     });
+
+    it("returns a page of items with a value in a secondary index and other filters", async () => {
+      const users = ["user1", "user2", "user3"];
+      const items = [];
+      for (let i = 0; i < 100; i++) {
+        items.push({
+          [primaryKey]: `something${i}`,
+          [secondaryKey]: users[i % 3],
+          [sortKey]: i,
+          favorite: i % 2 === 0,
+        });
+      }
+
+      await cache.putMany({ table, items });
+      const queryResults = await cache.queryPage({
+        table,
+        match: { [secondaryKey]: "user1" },
+        filter: { favorite: { "=": true } },
+        limit: 10,
+      });
+
+      expect(queryResults.items.length).to.equal(5);
+
+      const totalUsersReturned = new Set(
+        queryResults.items.map((result) => result[secondaryKey])
+      ).size;
+      expect(totalUsersReturned).to.equal(1);
+
+      const favoriteStates = new Set(
+        queryResults.items.map((result) => result.favorite.toString())
+      ).size;
+      expect(favoriteStates).to.equal(1);
+    });
   });
 
   describe("updateOne", () => {

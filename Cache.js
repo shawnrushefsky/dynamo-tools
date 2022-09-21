@@ -127,6 +127,7 @@ class Cache {
     indexName,
     limit = 100,
     ascending = true,
+    filter,
   }) {
     const items = [];
     let last;
@@ -139,6 +140,7 @@ class Cache {
         limit,
         start: last,
         ascending,
+        filter,
       });
       items.push(...Items.map(toObject));
       last = LastEvaluatedKey;
@@ -155,6 +157,7 @@ class Cache {
     lastKey,
     limit = 100,
     ascending = true,
+    filter,
   }) {
     const { Items, LastEvaluatedKey } = await this._query({
       table,
@@ -164,6 +167,7 @@ class Cache {
       limit,
       start: lastKey,
       ascending,
+      filter,
     });
     return { items: Items.map(toObject), lastKey: LastEvaluatedKey };
   }
@@ -225,6 +229,7 @@ class Cache {
     limit = 100,
     start,
     ascending = true,
+    filter,
   }) {
     const params = {
       TableName: table,
@@ -242,11 +247,13 @@ class Cache {
         );
       }
       params.IndexName = indexName || Object.keys(match)[0];
-      params.KeyConditionExpression = "#S = :val";
-      params.ExpressionAttributeNames["#S"] = Object.keys(match)[0];
-      params.ExpressionAttributeValues[":val"] = fromObject(
-        Object.values(match)[0]
-      );
+      params.KeyConditionExpression = Object.keys(match)
+        .map((_, i) => `#S${i} = :val${i}`)
+        .join(" AND ");
+      Object.keys(match).forEach((key, i) => {
+        params.ExpressionAttributeNames[`#S${i}`] = key;
+        params.ExpressionAttributeValues[`:val${i}`] = fromObject(match[key]);
+      });
     }
 
     if (range) {
@@ -256,6 +263,20 @@ class Cache {
       params.KeyConditionExpression += ` AND #R ${comparison} :sortKeyVal`;
       params.ExpressionAttributeNames["#R"] = rangeKey;
       params.ExpressionAttributeValues[":sortKeyVal"] = fromObject(value);
+    }
+
+    if (filter) {
+      params.FilterExpression = Object.keys(filter)
+        .map((filterKey, i) => {
+          params.ExpressionAttributeNames[`#F${i}`] = filterKey;
+          return Object.keys(filter[filterKey]).map((comparison, j) => {
+            const value = filter[filterKey][comparison];
+            params.ExpressionAttributeValues[`:fVal${j}`] = fromObject(value);
+            return `#F${i} ${comparison} :fVal${j}`;
+          });
+        })
+        .flat()
+        .join(" AND ");
     }
 
     const cmd = new QueryCommand(params);
