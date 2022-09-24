@@ -131,7 +131,7 @@ class Cache {
     });
 
     const { Responses } = await this.client.send(cmd);
-    return Responses?.tests?.map(toObject);
+    return Responses?.[table]?.map(toObject);
   }
 
   async query({
