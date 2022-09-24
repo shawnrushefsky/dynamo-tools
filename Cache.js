@@ -8,6 +8,7 @@ const {
   BatchWriteItemCommand,
   QueryCommand,
   UpdateItemCommand,
+  BatchGetItemCommand,
 } = require("@aws-sdk/client-dynamodb");
 const { toObject, fromObject } = require("./Item");
 
@@ -118,6 +119,19 @@ class Cache {
         return this.client.send(cmd);
       })
     );
+  }
+
+  async getMany({ table, matches }) {
+    const cmd = new BatchGetItemCommand({
+      RequestItems: {
+        [table]: {
+          Keys: matches.map(fromObject),
+        },
+      },
+    });
+
+    const { Responses } = await this.client.send(cmd);
+    return Responses?.tests?.map(toObject);
   }
 
   async query({

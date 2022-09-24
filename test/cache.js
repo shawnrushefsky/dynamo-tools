@@ -508,4 +508,43 @@ describe("Cache", () => {
       expect(resp).to.deep.equal({ [sortKey]: 4, num2: 0 });
     });
   });
+
+  describe("getMany", () => {
+    it("retrieves many items with an array of matches", async () => {
+      const users = ["user1", "user2", "user3"];
+      const items = [];
+      for (let i = 0; i < 100; i++) {
+        items.push({
+          [primaryKey]: `something${i}`,
+          [secondaryKey]: users[i % 3],
+          [sortKey]: i,
+          favorite: i % 2 === 0,
+        });
+      }
+
+      await cache.putMany({ table, items });
+
+      const returnedItems = await cache.getMany({
+        table,
+        matches: items
+          .slice(0, 10)
+          .map(({ [primaryKey]: key }) => ({ [primaryKey]: key })),
+      });
+
+      expect(returnedItems.sort(sortByPrimaryKey)).to.deep.equal(
+        items.slice(0, 10).sort(sortByPrimaryKey)
+      );
+    });
+  });
 });
+
+const sortByPrimaryKey = (a, b) => {
+  const key = primaryKey;
+  if (a[key] > b[key]) {
+    return -1;
+  }
+  if (a[key] < b[key]) {
+    return 1;
+  }
+  return 0;
+};
