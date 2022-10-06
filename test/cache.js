@@ -431,6 +431,30 @@ describe("Cache", () => {
         author_favorite: true,
       });
     });
+
+    it("updates when a conditional update succeeds #2", async () => {
+      await cache.putOne({
+        table,
+        item: {
+          [primaryKey]: "value",
+          something: "other",
+          author_favorite: true,
+        },
+      });
+
+      const resp = await cache.updateOne({
+        table,
+        match: { [primaryKey]: "value" },
+        update: { author_favorite: "" },
+        condition: { something: { "=": "other" } },
+        returnValues: "ALL_NEW",
+      });
+      expect(resp).to.deep.equal({
+        [primaryKey]: "value",
+        something: "other",
+        author_favorite: "",
+      });
+    });
   });
 
   describe("increment", () => {

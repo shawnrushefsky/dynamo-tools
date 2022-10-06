@@ -7,11 +7,11 @@ function toObject(dynamoItem) {
     return dynamoItem;
   }
 
-  if (dynamoItem.S) {
+  if (typeof dynamoItem.S !== "undefined") {
     return dynamoItem.S.toString();
   }
 
-  if (dynamoItem.N) {
+  if (typeof dynamoItem.N !== "undefined") {
     return Number(dynamoItem.N);
   }
 
@@ -69,11 +69,14 @@ function fromObject(obj) {
     return;
   }
 
-  if (typeof obj === "string" && isNaN(obj)) {
+  if (typeof obj === "string" && !/^\d+$/.test(obj)) {
     return { S: obj };
   }
 
-  if (typeof obj === "number" || (typeof obj === "string" && !isNaN(obj))) {
+  if (
+    typeof obj === "number" ||
+    (typeof obj === "string" && !isNaN(obj) && !isNaN(parseFloat(obj)))
+  ) {
     return { N: obj.toString() };
   }
 

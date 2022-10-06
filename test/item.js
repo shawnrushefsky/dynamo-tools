@@ -157,6 +157,11 @@ describe("Item.fromObject", () => {
       },
     });
   });
+
+  it("works for empty strings", () => {
+    const item = Item.fromObject("");
+    expect(item).to.deep.equal({ S: "" });
+  });
 });
 
 describe("isPOJO", () => {
