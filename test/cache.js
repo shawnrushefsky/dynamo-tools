@@ -561,7 +561,7 @@ describe("Cache", () => {
     });
   });
 
-  describe.only("appendToList", () => {
+  describe("appendToList", () => {
     it("initializes a new list if one does not exist already", async () => {
       await cache.putOne({
         table,
