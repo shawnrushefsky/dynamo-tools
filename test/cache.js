@@ -621,6 +621,127 @@ describe("Cache", () => {
       });
     });
   });
+
+  describe("addToSet", () => {
+    it("initializes a new set if one does not exist already", async () => {
+      await cache.putOne({
+        table,
+        item: {
+          [primaryKey]: "value",
+          something: "other",
+          author_favorite: true,
+        },
+      });
+
+      await cache.addToSet({
+        table,
+        match: { [primaryKey]: "value" },
+        update: { images: new Set(["image1.png", "image2.png"]) },
+      });
+
+      const item = await cache.getOne({
+        table,
+        match: { [primaryKey]: "value" },
+      });
+
+      expect(item).to.deep.equal({
+        images: new Set(["image1.png", "image2.png"]),
+        primary_key: "value",
+        something: "other",
+        author_favorite: true,
+      });
+    });
+
+    it("adds items to an existing set", async () => {
+      await cache.putOne({
+        table,
+        item: {
+          [primaryKey]: "value",
+          something: "other",
+          author_favorite: true,
+          images: new Set(["image1.png", "image2.png"]),
+        },
+      });
+
+      await cache.addToSet({
+        table,
+        match: { [primaryKey]: "value" },
+        update: { images: new Set(["image1.png", "image2.png", "image3.png"]) },
+      });
+
+      const item = await cache.getOne({
+        table,
+        match: { [primaryKey]: "value" },
+      });
+
+      expect(item).to.deep.equal({
+        images: new Set(["image1.png", "image2.png", "image3.png"]),
+        primary_key: "value",
+        something: "other",
+        author_favorite: true,
+      });
+    });
+  });
+
+  describe("deleteFromSet", () => {
+    it("does nothing if the set does not exist", async () => {
+      await cache.putOne({
+        table,
+        item: {
+          [primaryKey]: "value",
+          something: "other",
+          author_favorite: true,
+        },
+      });
+
+      await cache.deleteFromSet({
+        table,
+        match: { [primaryKey]: "value" },
+        update: { images: new Set(["image1.png", "image2.png"]) },
+      });
+
+      const item = await cache.getOne({
+        table,
+        match: { [primaryKey]: "value" },
+      });
+
+      expect(item).to.deep.equal({
+        primary_key: "value",
+        something: "other",
+        author_favorite: true,
+      });
+    });
+
+    it("removes items from an existing set", async () => {
+      await cache.putOne({
+        table,
+        item: {
+          [primaryKey]: "value",
+          something: "other",
+          author_favorite: true,
+          images: new Set(["image1.png", "image2.png"]),
+        },
+      });
+
+      await cache.deleteFromSet({
+        table,
+        match: { [primaryKey]: "value" },
+        update: { images: new Set(["image1.png"]) },
+      });
+
+      const item = await cache.getOne({
+        table,
+        match: { [primaryKey]: "value" },
+      });
+
+      expect(item).to.deep.equal({
+        images: new Set(["image2.png"]),
+        primary_key: "value",
+        something: "other",
+        author_favorite: true,
+      });
+    });
+  });
 });
 
 const sortByPrimaryKey = (a, b) => {

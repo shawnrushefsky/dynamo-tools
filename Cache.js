@@ -250,6 +250,53 @@ class Cache {
     return toObject(Attributes);
   }
 
+  async addToSet({
+    table,
+    match,
+    update,
+    returnValues = "UPDATED_NEW",
+    condition,
+  }) {
+    return this.increment({ table, match, update, returnValues, condition });
+  }
+
+  async deleteFromSet({
+    table,
+    match,
+    update,
+    returnValues = "UPDATED_NEW",
+    condition,
+  }) {
+    const params = {
+      TableName: table,
+      Key: fromObject(match),
+      UpdateExpression: `DELETE ${Object.keys(update)
+        .map((_, i) => `#K${i} :val${i}`)
+        .join(",")}`,
+      ExpressionAttributeNames: {},
+      ExpressionAttributeValues: {},
+      ReturnValues: returnValues,
+    };
+
+    Object.keys(update).forEach((key, i) => {
+      params.ExpressionAttributeNames[`#K${i}`] = key;
+      params.ExpressionAttributeValues[`:val${i}`] = fromObject(update[key]);
+    });
+
+    if (condition) {
+      const conditionKey = Object.keys(condition)[0];
+      const comparison = Object.keys(condition[conditionKey])[0];
+      const value = condition[conditionKey][comparison];
+      params.ConditionExpression = `#C ${comparison} :conVal`;
+      params.ExpressionAttributeNames["#C"] = conditionKey;
+      params.ExpressionAttributeValues[":conVal"] = fromObject(value);
+    }
+
+    const cmd = new UpdateItemCommand(params);
+    const { Attributes } = await this.client.send(cmd);
+    return toObject(Attributes);
+  }
+
   async appendToList({
     table,
     match,
