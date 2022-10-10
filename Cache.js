@@ -214,7 +214,13 @@ class Cache {
     return toObject(Attributes);
   }
 
-  async increment({ table, match, update, returnValues = "UPDATED_NEW" }) {
+  async increment({
+    table,
+    match,
+    update,
+    returnValues = "UPDATED_NEW",
+    condition,
+  }) {
     const params = {
       TableName: table,
       Key: fromObject(match),
@@ -230,6 +236,57 @@ class Cache {
       params.ExpressionAttributeNames[`#K${i}`] = key;
       params.ExpressionAttributeValues[`:val${i}`] = fromObject(update[key]);
     });
+
+    if (condition) {
+      const conditionKey = Object.keys(condition)[0];
+      const comparison = Object.keys(condition[conditionKey])[0];
+      const value = condition[conditionKey][comparison];
+      params.ConditionExpression = `#C ${comparison} :conVal`;
+      params.ExpressionAttributeNames["#C"] = conditionKey;
+      params.ExpressionAttributeValues[":conVal"] = fromObject(value);
+    }
+    const cmd = new UpdateItemCommand(params);
+    const { Attributes } = await this.client.send(cmd);
+    return toObject(Attributes);
+  }
+
+  async appendToList({
+    table,
+    match,
+    update,
+    returnValues = "NONE",
+    condition,
+  }) {
+    const params = {
+      TableName: table,
+      Key: fromObject(match),
+      UpdateExpression: Object.keys(update)
+        .map(
+          (k, i) =>
+            `SET #K${i} = list_append(if_not_exists(#K${i}, :empty_list), :val${i})`
+        )
+        .join(", "),
+      ExpressionAttributeNames: {},
+      ExpressionAttributeValues: {
+        ":empty_list": fromObject([]),
+      },
+      ReturnValues: returnValues,
+    };
+
+    Object.keys(update).forEach((key, i) => {
+      params.ExpressionAttributeNames[`#K${i}`] = key;
+      params.ExpressionAttributeValues[`:val${i}`] = fromObject(update[key]);
+    });
+
+    if (condition) {
+      const conditionKey = Object.keys(condition)[0];
+      const comparison = Object.keys(condition[conditionKey])[0];
+      const value = condition[conditionKey][comparison];
+      params.ConditionExpression = `#C ${comparison} :conVal`;
+      params.ExpressionAttributeNames["#C"] = conditionKey;
+      params.ExpressionAttributeValues[":conVal"] = fromObject(value);
+    }
+
     const cmd = new UpdateItemCommand(params);
     const { Attributes } = await this.client.send(cmd);
     return toObject(Attributes);

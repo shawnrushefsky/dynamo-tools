@@ -560,6 +560,67 @@ describe("Cache", () => {
       );
     });
   });
+
+  describe.only("appendToList", () => {
+    it("initializes a new list if one does not exist already", async () => {
+      await cache.putOne({
+        table,
+        item: {
+          [primaryKey]: "value",
+          something: "other",
+          author_favorite: true,
+        },
+      });
+
+      await cache.appendToList({
+        table,
+        match: { [primaryKey]: "value" },
+        update: { images: ["image1.png", "image2.png"] },
+      });
+
+      const item = await cache.getOne({
+        table,
+        match: { [primaryKey]: "value" },
+      });
+
+      expect(item).to.deep.equal({
+        images: ["image1.png", "image2.png"],
+        primary_key: "value",
+        something: "other",
+        author_favorite: true,
+      });
+    });
+
+    it("adds items to an existing list", async () => {
+      await cache.putOne({
+        table,
+        item: {
+          [primaryKey]: "value",
+          something: "other",
+          author_favorite: true,
+          images: ["image1.png", "image2.png"],
+        },
+      });
+
+      await cache.appendToList({
+        table,
+        match: { [primaryKey]: "value" },
+        update: { images: ["image1.png", "image2.png"] },
+      });
+
+      const item = await cache.getOne({
+        table,
+        match: { [primaryKey]: "value" },
+      });
+
+      expect(item).to.deep.equal({
+        images: ["image1.png", "image2.png", "image1.png", "image2.png"],
+        primary_key: "value",
+        something: "other",
+        author_favorite: true,
+      });
+    });
+  });
 });
 
 const sortByPrimaryKey = (a, b) => {
