@@ -187,6 +187,7 @@ class Cache {
   }
 
   async updateOne({ table, match, update, returnValues = "NONE", condition }) {
+    update = fromObject(update);
     const params = {
       TableName: table,
       Key: fromObject(match),
@@ -197,9 +198,10 @@ class Cache {
       ExpressionAttributeValues: {},
       ReturnValues: returnValues,
     };
+
     Object.keys(update).forEach((key, i) => {
       params.ExpressionAttributeNames[`#K${i}`] = key;
-      params.ExpressionAttributeValues[`:val${i}`] = fromObject(update[key]);
+      params.ExpressionAttributeValues[`:val${i}`] = update[key];
     });
     if (condition) {
       const conditionKey = Object.keys(condition)[0];
@@ -221,6 +223,7 @@ class Cache {
     returnValues = "UPDATED_NEW",
     condition,
   }) {
+    update = fromObject(update);
     const params = {
       TableName: table,
       Key: fromObject(match),
@@ -234,7 +237,7 @@ class Cache {
 
     Object.keys(update).forEach((key, i) => {
       params.ExpressionAttributeNames[`#K${i}`] = key;
-      params.ExpressionAttributeValues[`:val${i}`] = fromObject(update[key]);
+      params.ExpressionAttributeValues[`:val${i}`] = update[key];
     });
 
     if (condition) {
@@ -267,6 +270,7 @@ class Cache {
     returnValues = "UPDATED_NEW",
     condition,
   }) {
+    update = fromObject(update);
     const params = {
       TableName: table,
       Key: fromObject(match),
@@ -280,7 +284,7 @@ class Cache {
 
     Object.keys(update).forEach((key, i) => {
       params.ExpressionAttributeNames[`#K${i}`] = key;
-      params.ExpressionAttributeValues[`:val${i}`] = fromObject(update[key]);
+      params.ExpressionAttributeValues[`:val${i}`] = update[key];
     });
 
     if (condition) {
@@ -304,6 +308,7 @@ class Cache {
     returnValues = "NONE",
     condition,
   }) {
+    update = fromObject(update);
     const params = {
       TableName: table,
       Key: fromObject(match),
@@ -322,7 +327,7 @@ class Cache {
 
     Object.keys(update).forEach((key, i) => {
       params.ExpressionAttributeNames[`#K${i}`] = key;
-      params.ExpressionAttributeValues[`:val${i}`] = fromObject(update[key]);
+      params.ExpressionAttributeValues[`:val${i}`] = update[key];
     });
 
     if (condition) {
