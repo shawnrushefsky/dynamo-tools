@@ -402,6 +402,45 @@ describe("Cache", () => {
       });
     });
 
+    it("merges an object into an existing item, and by default returns nothing, with updates that have boolean values", async () => {
+      await cache.putOne({
+        table,
+        item: {
+          [primaryKey]: "value",
+          something: "other",
+          sort_ascending: false,
+        },
+      });
+
+      const resp = await cache.updateOne({
+        table,
+        match: { [primaryKey]: "value" },
+        update: {
+          name: undefined,
+          description: undefined,
+          public: undefined,
+          sort_key: "time_created",
+          sort_ascending: true,
+          grid_type: "standard",
+        },
+      });
+
+      expect(resp).to.be.undefined;
+
+      const item = await cache.getOne({
+        table,
+        match: { [primaryKey]: "value" },
+      });
+
+      expect(item).to.deep.equal({
+        [primaryKey]: "value",
+        something: "other",
+        sort_key: "time_created",
+        sort_ascending: true,
+        grid_type: "standard",
+      });
+    });
+
     it("merges an object into an existing item, and can optionally return the updated item", async () => {
       await cache.putOne({
         table,
