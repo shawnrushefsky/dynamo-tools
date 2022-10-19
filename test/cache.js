@@ -153,6 +153,44 @@ describe("Cache", () => {
 
       expect(item).to.be.undefined;
     });
+
+    it("throws if a condition fails", async () => {
+      await cache.putOne({
+        table,
+        item: { [primaryKey]: "value", something: "other" },
+      });
+
+      try {
+        await cache.deleteOne({
+          table,
+          match: { [primaryKey]: "value" },
+          condition: { something: { "=": "other2" } },
+        });
+        expect.fail();
+      } catch (e) {
+        expect(e.message).to.match(/conditional request failed/i);
+      }
+    });
+
+    it("deletes if a condition succeeds", async () => {
+      await cache.putOne({
+        table,
+        item: { [primaryKey]: "value", something: "other" },
+      });
+
+      await cache.deleteOne({
+        table,
+        match: { [primaryKey]: "value" },
+        condition: { something: { "=": "other" } },
+      });
+
+      const item = await cache.getOne({
+        table,
+        match: { [primaryKey]: "value" },
+      });
+
+      expect(item).to.be.undefined;
+    });
   });
 
   describe("getAll", () => {

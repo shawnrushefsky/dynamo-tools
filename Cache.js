@@ -41,11 +41,22 @@ class Cache {
     return this.client.send(cmd);
   }
 
-  async deleteOne({ table, match }) {
-    const cmd = new DeleteItemCommand({
+  async deleteOne({ table, match, condition }) {
+    const params = {
       TableName: table,
       Key: fromObject(match),
-    });
+    };
+    if (condition) {
+      params.ExpressionAttributeNames = {};
+      params.ExpressionAttributeValues = {};
+      const conditionKey = Object.keys(condition)[0];
+      const comparison = Object.keys(condition[conditionKey])[0];
+      const value = condition[conditionKey][comparison];
+      params.ConditionExpression = `#C ${comparison} :conVal`;
+      params.ExpressionAttributeNames["#C"] = conditionKey;
+      params.ExpressionAttributeValues[":conVal"] = fromObject(value);
+    }
+    const cmd = new DeleteItemCommand(params);
     return this.client.send(cmd);
   }
 
