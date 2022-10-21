@@ -9,6 +9,8 @@ const {
 
 const cache = new Cache({ endpoint: process.env.DYNAMO_ENDPOINT });
 
+const printful = require("./fixtures/printful-categories.json");
+
 const table = "tests";
 const primaryKey = "primary_key";
 const secondaryKey = "secondary_key";
@@ -105,6 +107,24 @@ describe("Cache", () => {
       expect(toObject(resp.Item)).to.deep.equal({
         [primaryKey]: "value",
         something: 1,
+      });
+    });
+
+    it("works with arrays of objects", async () => {
+      const key = "/categories";
+      await cache.putOne({
+        table,
+        item: { [primaryKey]: key, value: [{ id: 1 }, { id: 2 }] },
+      });
+      const cmd = new GetItemCommand({
+        TableName: table,
+        Key: fromObject({ [primaryKey]: key }),
+        ConsistentRead: true,
+      });
+      const resp = await cache.client.send(cmd);
+      expect(toObject(resp.Item)).to.deep.equal({
+        [primaryKey]: key,
+        value: [{ id: 1 }, { id: 2 }],
       });
     });
   });

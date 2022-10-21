@@ -1,0 +1,3947 @@
+{
+  "key": {
+    "S": "/categories"
+  },
+  "value": {
+    "L": [
+      {
+        "M": {
+          "id": {
+            "N": "1"
+          },
+          "parent_id": {
+            "N": "0"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/fb/fbf0cf796a5603666e85713ece1708a1_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "1"
+          },
+          "size": {
+            "S": "medium"
+          },
+          "title": {
+            "S": "Men's clothing"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "2"
+          },
+          "parent_id": {
+            "N": "0"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/04/04140d7cd1565012645092fc8f1d8632_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "2"
+          },
+          "size": {
+            "S": "medium"
+          },
+          "title": {
+            "S": "Women's clothing"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "3"
+          },
+          "parent_id": {
+            "N": "0"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/96/96e91feb26f0b28ba821534bb0d5478b_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "3"
+          },
+          "size": {
+            "S": "medium"
+          },
+          "title": {
+            "S": "Kids & youth clothing"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "4"
+          },
+          "parent_id": {
+            "N": "0"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/b1/b1e86be07423274b27b55561ddc6eee9_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "5"
+          },
+          "size": {
+            "S": "medium"
+          },
+          "title": {
+            "S": "Accessories"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "5"
+          },
+          "parent_id": {
+            "N": "0"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/77/7776d01e716d80e3ffbdebbf3db6b198_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "6"
+          },
+          "size": {
+            "S": "medium"
+          },
+          "title": {
+            "S": "Home & living"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "6"
+          },
+          "parent_id": {
+            "N": "1"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/4b/4b37924aaa8e264d1d3cd2a54beb6436_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "1"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "All shirts"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "7"
+          },
+          "parent_id": {
+            "N": "1"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/48/4895a0d9535a163841a8fb70623abfca_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "11"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "All hoodies & sweatshirts"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "8"
+          },
+          "parent_id": {
+            "N": "2"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/e0/e0dedef56b629acb74ff014b57c2c487_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "1"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "All shirts"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "9"
+          },
+          "parent_id": {
+            "N": "2"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/42/4257e29c8e9136f6d4579a2479d246d6_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "20"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "All hoodies & sweatshirts"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "10"
+          },
+          "parent_id": {
+            "N": "107"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/6c/6c4b87ff2b03f5b5e4af00a269360463_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "15"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Leggings"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "11"
+          },
+          "parent_id": {
+            "N": "2"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/bf/bfec2d7e86efa11f5a3ffd7382732cfd_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "10"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Dresses"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "12"
+          },
+          "parent_id": {
+            "N": "3"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/2e/2e1ef19f21392a51e95ffdd16f9249a1_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "1"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "All shirts"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "13"
+          },
+          "parent_id": {
+            "N": "3"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/89/89df5b9d8911aa16c25a1bb1984a8c41_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "10"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Leggings"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "14"
+          },
+          "parent_id": {
+            "N": "3"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/04/0465bd69139899945a1ed5f2c173cdec_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "12"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Baby bodysuits"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "15"
+          },
+          "parent_id": {
+            "N": "93"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/26/26bc7142ed3620d32bbd6b5a4d5684e0_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "0"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "All hats"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "16"
+          },
+          "parent_id": {
+            "N": "4"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/1e/1e3aa205d44b5f70f40dcebd30df1d2f_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "3"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Bags"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "21"
+          },
+          "parent_id": {
+            "N": "5"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/5b/5b23616929a3e792452686b85962f88b_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "3"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Wall art"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "22"
+          },
+          "parent_id": {
+            "N": "5"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/15/15b564814057a696d22fda3d4453fe8b_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "14"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Towels"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "23"
+          },
+          "parent_id": {
+            "N": "6"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/50/505a984d2e4a357ca321f92a79d402cf_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "13"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Tank tops"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "24"
+          },
+          "parent_id": {
+            "N": "6"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/b1/b1513c82696405fcc316fc611c57f132_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "5"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "T-shirts"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "25"
+          },
+          "parent_id": {
+            "N": "6"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/66/669da0fcf673fa899649a03bfab828b4_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "11"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "3/4 sleeve shirts"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "26"
+          },
+          "parent_id": {
+            "N": "6"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/33/33a8ceef0230030e28a06de1d4c1186c_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "3"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Long sleeve shirts"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "27"
+          },
+          "parent_id": {
+            "N": "6"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/f1/f1f46f3b6662abb1663bb0ec749c2626_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "4"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "All-over shirts"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "28"
+          },
+          "parent_id": {
+            "N": "7"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/aa/aa5b9bd6fec481dded836c582a5d3ec1_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "15"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Hoodies"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "29"
+          },
+          "parent_id": {
+            "N": "7"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/20/200a2ac91e9d92d20ea31b35c92fb998_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "16"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Sweatshirts"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "30"
+          },
+          "parent_id": {
+            "N": "8"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/61/614e87140c26a80d60355b15c86e15d3_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "18"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Tank tops"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "31"
+          },
+          "parent_id": {
+            "N": "8"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/c6/c6cc08d0e6b3fcb15e28d944246b24cc_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "20"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Crop tops"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "32"
+          },
+          "parent_id": {
+            "N": "8"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/7b/7b5e253d59c1ffa05023414dbd8ba511_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "5"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "T-shirts"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "33"
+          },
+          "parent_id": {
+            "N": "8"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/4a/4a162d963b042711b5ce78e5557ce610_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "11"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "3/4 sleeve shirts"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "34"
+          },
+          "parent_id": {
+            "N": "8"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/28/28ca0c81e02f113cebb9eaa67047045a_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "21"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Long sleeve shirts"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "35"
+          },
+          "parent_id": {
+            "N": "8"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/92/92d7deffe690b3d0d34ba7293bbb8c4f_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "7"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "All-over shirts"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "36"
+          },
+          "parent_id": {
+            "N": "9"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/e6/e6e4aff73d34be63c8d5b36ff4fc90ee_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "19"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Hoodies"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "37"
+          },
+          "parent_id": {
+            "N": "9"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/cc/cc038c312495fd88d73b582c6b09e15f_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "9"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Sweatshirts"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "38"
+          },
+          "parent_id": {
+            "N": "12"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/b6/b6a957579df32ee1de862559b7dcd2d6_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "5"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "T-shirts"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "40"
+          },
+          "parent_id": {
+            "N": "15"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/b5/b598db467a3f5bd40d2c4c3ffece0d70_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "4"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Trucker hats"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "41"
+          },
+          "parent_id": {
+            "N": "15"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/46/462078b588a16aea0daa8d51e8ddafbf_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "3"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Snapbacks"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "42"
+          },
+          "parent_id": {
+            "N": "15"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/13/139452d7fa9122de6814e67deb189ac2_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "2"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Dad hats / baseball caps"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "43"
+          },
+          "parent_id": {
+            "N": "15"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/49/496f3391d312489190b731d4fc04917b_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "6"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "5-panel hats"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "44"
+          },
+          "parent_id": {
+            "N": "15"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/76/76afef1a1498f1cbb8ec0da6bc196c16_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "7"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Mesh hats"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "45"
+          },
+          "parent_id": {
+            "N": "15"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/d4/d49372e7781a646dd8d1219299667f1d_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "1"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Beanies"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "46"
+          },
+          "parent_id": {
+            "N": "15"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/49/49a8933f67952d90ef432aa55ffc586f_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "5"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Bucket hats"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "47"
+          },
+          "parent_id": {
+            "N": "15"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/89/891ebde9b563719cc168d5562e1b288a_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "8"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Visors"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "48"
+          },
+          "parent_id": {
+            "N": "16"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/a3/a3981631e6cdc167d04d13b8ea243414_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "14"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Tote bags"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "49"
+          },
+          "parent_id": {
+            "N": "16"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/4c/4cabc6d6f996c14db9afb9f4a6f51e4d_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "19"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Drawstring bags"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "51"
+          },
+          "parent_id": {
+            "N": "107"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/5b/5b2dddc32c670b7f6581c15c9f29ae5b_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "25"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Shorts"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "55"
+          },
+          "parent_id": {
+            "N": "21"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/6f/6f2f0c50f2558af01e4f8eebbc09a66d_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "21"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Posters"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "56"
+          },
+          "parent_id": {
+            "N": "21"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/34/347883396e6a71fdb25121f20c85e2b3_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "25"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Framed posters"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "57"
+          },
+          "parent_id": {
+            "N": "21"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/7c/7c2dd885646f3971b7199ac833a0232f_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "27"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Canvas prints"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "58"
+          },
+          "parent_id": {
+            "N": "106"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/bb/bb22b604c046940b5afa993fed434cd5_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "12"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Shorts"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "60"
+          },
+          "parent_id": {
+            "N": "107"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/10/1045bc943ad5971076d561730e52f4d3_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "15"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Skirts"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "63"
+          },
+          "parent_id": {
+            "N": "12"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/99/99897bbc9179c1758511ee7831bf01b1_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "7"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "All-over shirts"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "79"
+          },
+          "parent_id": {
+            "N": "2"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/ae/ae052d0a6b21ac53ece16333d865a42c_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "16"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Swimwear"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "81"
+          },
+          "parent_id": {
+            "N": "16"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/20/2074c52a68986ed9c104fb81c59c1188_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "20"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Backpacks"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "85"
+          },
+          "parent_id": {
+            "N": "6"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/20/20a525ab712f0e4a8026f7a80751f4f7_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "9"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Embroidered shirts"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "86"
+          },
+          "parent_id": {
+            "N": "2"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/33/337bd861919e3fc72196c14c824ae4ff_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "17"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Sports bras"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "88"
+          },
+          "parent_id": {
+            "N": "5"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/e6/e65a44ef3a9322c9c90b49253405f63f_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "24"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Aprons"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "89"
+          },
+          "parent_id": {
+            "N": "8"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/6a/6a04c987145dca03150d676fb8a92844_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "8"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Embroidered shirts"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "90"
+          },
+          "parent_id": {
+            "N": "106"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/f8/f8e62a9df775f3b7d2e886fdfe1e5303_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "19"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Leggings"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "93"
+          },
+          "parent_id": {
+            "N": "0"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/0c/0c38c3b13be79b5f8e1f2f1dccf62115_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "4"
+          },
+          "size": {
+            "S": "medium"
+          },
+          "title": {
+            "S": "Hats"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "94"
+          },
+          "parent_id": {
+            "N": "4"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/b7/b7bfc97cca9269101c3a19b553e5e2d5_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "25"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Jewelry"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "95"
+          },
+          "parent_id": {
+            "N": "1"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/cf/cfaac716caea797f3e48c267edc34869_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "6"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Jackets & vests"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "96"
+          },
+          "parent_id": {
+            "N": "2"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/22/22b7954cec83d6ff32f768ae163ab512_t?v=1665737569"
+          },
+          "catalog_position": {
+            "N": "6"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Jackets & vests "
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "98"
+          },
+          "parent_id": {
+            "N": "106"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/a8/a8333cb02ef2a47255d45be7185234d3_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "17"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Sweatpants & joggers"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "99"
+          },
+          "parent_id": {
+            "N": "107"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/75/75570e6a358cc5dd682193b9f670875e_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "23"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Sweatpants & joggers"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "100"
+          },
+          "parent_id": {
+            "N": "3"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/72/7265a510903c59c77704bbf158f3ad3a_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "13"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Swimwear"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "101"
+          },
+          "parent_id": {
+            "N": "16"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/7e/7e276653d84a862b0d07b493ce002fd3_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "21"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Fanny packs"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "102"
+          },
+          "parent_id": {
+            "N": "3"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/63/633efd3a3deea254fd8650df0955f12a_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "14"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Baby bibs"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "105"
+          },
+          "parent_id": {
+            "N": "3"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/03/03cf823ebae133f72602f4ea00eb88bd_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "2"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Hoodies"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "106"
+          },
+          "parent_id": {
+            "N": "1"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/e8/e810507648a873b85087af9c5a102970_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "20"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "All bottoms"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "107"
+          },
+          "parent_id": {
+            "N": "2"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/4c/4c47c07bef6111f24b22d2c75c0bc408_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "12"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "All Bottoms"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "108"
+          },
+          "parent_id": {
+            "N": "6"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/11/1112539d7f1a7b859a41b9434f08e9ab_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "10"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Polo shirts"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "110"
+          },
+          "parent_id": {
+            "N": "94"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/ad/ad04b382d1568680fcb0b8364961fe3b_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "8"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Bracelets"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "111"
+          },
+          "parent_id": {
+            "N": "94"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/35/35c1f3a32aec2d23dc60e4cf5254bd64_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "9"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Necklaces"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "112"
+          },
+          "parent_id": {
+            "N": "5"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/cd/cd21573a67ee3fc691907e26b5d37d29_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "17"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Drinkware & coasters"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "116"
+          },
+          "parent_id": {
+            "N": "0"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/9e/9ed797fbbdac07a98f6fdfa06a9f6c8f_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "7"
+          },
+          "size": {
+            "S": "medium"
+          },
+          "title": {
+            "S": "Collections"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "117"
+          },
+          "parent_id": {
+            "N": "116"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/cd/cd9cc4df318744e1a137710d8e379e52_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "8"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Sportswear"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "118"
+          },
+          "parent_id": {
+            "N": "116"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/fd/fdd2c3010dc02fd2048ceaf90655a511_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "9"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Workwear"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "119"
+          },
+          "parent_id": {
+            "N": "116"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/92/923faa74b51263968775a2b8898cf480_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "10"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Streetwear"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "120"
+          },
+          "parent_id": {
+            "N": "116"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/9e/9e8ed04bff3e8d8c4056dc6948c79250_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "11"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Beachwear"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "121"
+          },
+          "parent_id": {
+            "N": "116"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/0f/0fc974a6095f5f6c6ba062385e5c9f7b_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "12"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Eco-friendly"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "122"
+          },
+          "parent_id": {
+            "N": "116"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/f1/f1877c40e5e3e98ff6c87607f68c0f18_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "13"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Promotional gifts"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "123"
+          },
+          "parent_id": {
+            "N": "116"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/61/61c5c1ae07e65c90ee94fa089bbca74d_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "0"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "New products"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "124"
+          },
+          "parent_id": {
+            "N": "94"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/b4/b473a3884b8aa0ded65d99d52ec79107_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "11"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Earrings"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "125"
+          },
+          "parent_id": {
+            "N": "106"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/d0/d05fedbb31dc916ef7b53fddd8493365_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "18"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Underwear"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "126"
+          },
+          "parent_id": {
+            "N": "4"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/3b/3bf657b23743c2c232e50fdf3e2e7029_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "12"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Face masks"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "129"
+          },
+          "parent_id": {
+            "N": "16"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/e2/e2efde2e47e6851578d3f057cfb2f7ca_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "5"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Duffle bags"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "134"
+          },
+          "parent_id": {
+            "N": "116"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/5d/5df787b713288decd30d657335402b1e_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "14"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Champion products"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "136"
+          },
+          "parent_id": {
+            "N": "116"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/75/75725cfaa350604274dcc91a0d3ce961_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "18"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Sell in Southern Europe"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "137"
+          },
+          "parent_id": {
+            "N": "3"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/76/76850bf14af48e78ca2e13b7cb8568f8_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "4"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Baby jackets"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "140"
+          },
+          "parent_id": {
+            "N": "116"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/88/889f12ba6c9bddc56e463931b6e2966b_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "19"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Fast shipping to Australia and New Zealand"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "142"
+          },
+          "parent_id": {
+            "N": "116"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/e0/e0c3a49036f05e74c7e38afad801d163_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "22"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Sell in East Asia"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "143"
+          },
+          "parent_id": {
+            "N": "4"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/e2/e276152927dc241073c06c5e288afd55_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "15"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Keychains"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "144"
+          },
+          "parent_id": {
+            "N": "116"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/97/970adde3b92c0a422fbc750c786a1df3_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "5"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Fall and winter"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "145"
+          },
+          "parent_id": {
+            "N": "12"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/b5/b5d6d8fde57c5c4ff8110535ae7e27fb_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "8"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "3/4 sleeve shirts"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "147"
+          },
+          "parent_id": {
+            "N": "116"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/b0/b08edf8ff909b4e27082179a4e46af58_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "23"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Fast shipping to France"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "148"
+          },
+          "parent_id": {
+            "N": "116"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/06/067c3c5d7c3b755a516b8cbb91fdad9d_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "20"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Fast shipping to Canada"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "149"
+          },
+          "parent_id": {
+            "N": "116"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/17/176b00eef11f9dd359d0660eb446def5_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "7"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Loungewear"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "152"
+          },
+          "parent_id": {
+            "N": "116"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/e1/e1f8024155bdad2650b496fc5053f8d6_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "24"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Fast shipping to Portugal"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "153"
+          },
+          "parent_id": {
+            "N": "116"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/99/9965af2da1119bd385deac3ed51f8d37_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "21"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Sell in Northern Europe"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "155"
+          },
+          "parent_id": {
+            "N": "116"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/a8/a815ed433c198b9b89da3dc082188beb_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "15"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Style Trends"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "159"
+          },
+          "parent_id": {
+            "N": "0"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/0d/0d1c7f7afcc42147f88ee607bcaf9ff6_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "7"
+          },
+          "size": {
+            "S": "medium"
+          },
+          "title": {
+            "S": "Brands"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "161"
+          },
+          "parent_id": {
+            "N": "159"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/fa/fa3db3c42cb07ea7d044b7047509e8fa_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "1"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "American Apparel"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "164"
+          },
+          "parent_id": {
+            "N": "159"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/f9/f9609d8df4f506554894afe4571dc52c_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "4"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Bella + Canvas"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "165"
+          },
+          "parent_id": {
+            "N": "159"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/ec/ecf9f857d7bfe5550b23d2aca065103a_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "5"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "BagBase"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "167"
+          },
+          "parent_id": {
+            "N": "159"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/09/09ee61756f9948902bef6b81a2d4a5ab_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "7"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Beechfield Hats"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "168"
+          },
+          "parent_id": {
+            "N": "159"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/18/1850e9dd354987353a272982dbe28528_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "8"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Big Accessories"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "169"
+          },
+          "parent_id": {
+            "N": "159"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/79/79572031205d1dc37dade9f9543e6f8f_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "9"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Champion"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "170"
+          },
+          "parent_id": {
+            "N": "159"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/22/22baea95fb9d70891dc8845e9b1ebbad_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "10"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Cotton Heritage"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "171"
+          },
+          "parent_id": {
+            "N": "159"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/ab/ab940e43ec4cf2e83e9acb117246fb7c_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "11"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Econscious"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "172"
+          },
+          "parent_id": {
+            "N": "159"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/99/99576907eb3ce632618d7181d7f169d2_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "12"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Flexfit"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "173"
+          },
+          "parent_id": {
+            "N": "159"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/de/de087e2847f7fd4fc67af71c2de17625_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "13"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Gildan"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "174"
+          },
+          "parent_id": {
+            "N": "159"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/f8/f86346a30505974298564bd4f1a90492_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "14"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Jerzees"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "178"
+          },
+          "parent_id": {
+            "N": "159"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/54/54592d06c14286d607bbf4f00c480f8c_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "18"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "District"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "179"
+          },
+          "parent_id": {
+            "N": "159"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/1d/1d9a1f42a1fa0a65d4c82b695ba0275d_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "18"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Liberty Bags"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "180"
+          },
+          "parent_id": {
+            "N": "159"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/06/0641c65e73c2f692a2fbfbd4816cc0b3_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "19"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Next Level Apparel"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "181"
+          },
+          "parent_id": {
+            "N": "159"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/3f/3f7167514f55b353a43e892aae0322df_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "20"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Otto Cap"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "182"
+          },
+          "parent_id": {
+            "N": "159"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/06/06fb00e3b5cf846ca19c1e57e7a088a1_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "21"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Port Authority"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "183"
+          },
+          "parent_id": {
+            "N": "159"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/78/78b9c58761f02a9fc6f827b29ca60704_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "22"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Rabbit Skins"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "184"
+          },
+          "parent_id": {
+            "N": "159"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/9b/9b5bc2f86707718c4a2ef7719110d29c_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "23"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Sport-Tek"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "185"
+          },
+          "parent_id": {
+            "N": "159"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/26/269985774df4b63580a0026b7f5f983e_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "24"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Sportsman"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "186"
+          },
+          "parent_id": {
+            "N": "159"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/1b/1b2a45b9b54abff4ed7598d4b89416bc_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "25"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Tultex"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "187"
+          },
+          "parent_id": {
+            "N": "159"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/cf/cf03f7a5f469afd6be6f14a85e0d853c_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "26"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Yupoong"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "188"
+          },
+          "parent_id": {
+            "N": "116"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/9e/9e91bc9fa5dfd2946876fbe2c27ad262_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "1"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Bestsellers"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "189"
+          },
+          "parent_id": {
+            "N": "5"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/84/84c1a35d7d10a1859e87ddfe1261ebc8_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "18"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Pet products"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "190"
+          },
+          "parent_id": {
+            "N": "5"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/e4/e40f05ad7522e2f74f2599b39980e63a_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "23"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Stationery"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "191"
+          },
+          "parent_id": {
+            "N": "112"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/01/01d7fd0b153048777d3fb13d27039098_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "5"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Water bottles"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "192"
+          },
+          "parent_id": {
+            "N": "116"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/b3/b328b113539d9d902ddccaeb14131eef_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "25"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Fast shipping to Brazil"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "194"
+          },
+          "parent_id": {
+            "N": "3"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/8e/8e3f249e86b1c6a898af0aca2c0cac9d_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "11"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Hats"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "195"
+          },
+          "parent_id": {
+            "N": "112"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/03/035e73f62925b1b9597d16419896daee_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "6"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Mugs"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "196"
+          },
+          "parent_id": {
+            "N": "21"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/e1/e185d9c8eeaeeb97fca18ee76f0f7d62_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "4"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Flags"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "197"
+          },
+          "parent_id": {
+            "N": "190"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/da/da6caac995335b87ace2d79af70eef5f_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "11"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Postcards"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "198"
+          },
+          "parent_id": {
+            "N": "190"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/50/5036692acc7da7d64b03df7bb4323d44_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "10"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Notebooks"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "202"
+          },
+          "parent_id": {
+            "N": "190"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/73/73bb6857a7ff2846aa1775d9a5bd3111_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "7"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Stickers"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "203"
+          },
+          "parent_id": {
+            "N": "12"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/45/453f021a7eb813d80b92c5dc01552e0b_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "6"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Long sleeve shirts"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "205"
+          },
+          "parent_id": {
+            "N": "4"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/73/73db2457b7994323df23094c9b4209fc_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "16"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Footwear"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "206"
+          },
+          "parent_id": {
+            "N": "205"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/f3/f35f926dca1ffb8077a37b4ed18ada3a_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "22"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Flip flops"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "209"
+          },
+          "parent_id": {
+            "N": "116"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/ff/ffcd6f5b4c30e7eeb10b80997e951b45_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "27"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Back to school"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "210"
+          },
+          "parent_id": {
+            "N": "5"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/ab/ab5013a09e55a0c816152189f11c6cc2_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "15"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Fabrics"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "211"
+          },
+          "parent_id": {
+            "N": "159"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/f5/f5347299ab9571cb008fc29028f41d4f_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "27"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Stanley/Stella"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "212"
+          },
+          "parent_id": {
+            "N": "159"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/ef/eff0118b66ca60756eacd18b3046c76f_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "28"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "LAT Apparel"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "213"
+          },
+          "parent_id": {
+            "N": "116"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/a5/a53fde549f44d6a3160bb223038f536e_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "28"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Grow a fashion brand"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "214"
+          },
+          "parent_id": {
+            "N": "159"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/6d/6d2b28e0baf1ef73ee678602a39ec725_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "29"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "adidas"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "215"
+          },
+          "parent_id": {
+            "N": "4"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/9c/9c5b91cd2b28e85ff211413cb7f10346_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "1"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Patches"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "216"
+          },
+          "parent_id": {
+            "N": "2"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/b0/b0d9a45de73436050d6e57bd28e3b25b_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "22"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Robes"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "217"
+          },
+          "parent_id": {
+            "N": "4"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/57/5777dd79c16a3a3faac2308af974086d_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "4"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Hair accessories"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "219"
+          },
+          "parent_id": {
+            "N": "116"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/60/6084d2b3e892cea7d85b689ebcbd1db7_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "6"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Tie-dye"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "220"
+          },
+          "parent_id": {
+            "N": "205"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/b5/b5c69f2a599207b5fd2200274bfe62be_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "2"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Shoes"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "221"
+          },
+          "parent_id": {
+            "N": "205"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/0b/0b72a4a4f5eb5d2e6408a0ba59dcd013_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "7"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Socks"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "222"
+          },
+          "parent_id": {
+            "N": "5"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/8e/8ecf33f8238a7377df84b193a3a9d4da_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "1"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Puzzles"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "223"
+          },
+          "parent_id": {
+            "N": "116"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/74/744a3b23cd7e92dd691ee642b7eff4d5_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "2"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Premium products"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "224"
+          },
+          "parent_id": {
+            "N": "116"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/c3/c3ad7ca2c846f94db14ef5feb9ffe07e_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "17"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Fast shipping to the UK"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "226"
+          },
+          "parent_id": {
+            "N": "1"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/57/574bda9157f8cd79f555c652a2ffa175_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "0"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "All men's clothing"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "227"
+          },
+          "parent_id": {
+            "N": "2"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/32/32a9d185489f9ef88341c4abf25bc25d_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "0"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "All women’s clothing"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "228"
+          },
+          "parent_id": {
+            "N": "3"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/af/af15ef245d38b209c580c364865e3dd7_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "0"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "All kids & youth clothing"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "229"
+          },
+          "parent_id": {
+            "N": "4"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/bf/bf81374c3d030f813eeefdd9b35909e8_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "0"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "All accessories"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "230"
+          },
+          "parent_id": {
+            "N": "5"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/d1/d149b68a5f4f36e9eec62b391ce8d406_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "0"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "All home & living products"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "231"
+          },
+          "parent_id": {
+            "N": "159"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/31/314bf90bcdff477b24a59d49dedb4694_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "30"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Threadfast Apparel"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "232"
+          },
+          "parent_id": {
+            "N": "190"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/3b/3b67ff51c577904db7a5f253e1054ced_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "4"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Greeting cards"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "233"
+          },
+          "parent_id": {
+            "N": "116"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/ea/ea41cc38febac1e0019240a9912f80df_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "3"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Large embroidery"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "234"
+          },
+          "parent_id": {
+            "N": "116"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/14/143ae8d07100414732228ebb9e66b5ed_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "4"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Embroidery apparel with printed labels"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "235"
+          },
+          "parent_id": {
+            "N": "1"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/13/132458ceee5b398f8e0380b6c2e58e6d_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "14"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Swimwear"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "236"
+          },
+          "parent_id": {
+            "N": "159"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/29/29e47ce01ef599cd09238e95b0357193_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "31"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Shaka Wear"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "237"
+          },
+          "parent_id": {
+            "N": "159"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/35/3539ef5e555679070101bcacbf19a16a_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "32"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "SOL'S"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "238"
+          },
+          "parent_id": {
+            "N": "112"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/86/863cdaaa2eed224beb2177b80ab4154c_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "2"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Tumblers"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "240"
+          },
+          "parent_id": {
+            "N": "107"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/0c/0c307f28e8af185647ea54caac87e4bf_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "4"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Pants"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "241"
+          },
+          "parent_id": {
+            "N": "106"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/54/54f1b370420a974370d529ffe8c048a7_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "7"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Pants"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "242"
+          },
+          "parent_id": {
+            "N": "116"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/21/214d4e30b646215bf3cbf27b9f7ff20a_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "30"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Made in EU"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "243"
+          },
+          "parent_id": {
+            "N": "4"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/5f/5fe90837cf38c2f68e87fec1df757e31_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "12"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Tech accessories"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "244"
+          },
+          "parent_id": {
+            "N": "243"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/42/42c30953b1b7a172dcfc034ab03d9dec_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "0"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Phone cases"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "245"
+          },
+          "parent_id": {
+            "N": "243"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/81/81da3939eb505bcd4b2cda6d64939338_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "1"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Earphone cases"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "249"
+          },
+          "parent_id": {
+            "N": "112"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/c0/c0589d987c5ff94537b197c4118744e2_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "3"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Coasters"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "250"
+          },
+          "parent_id": {
+            "N": "243"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/7b/7bde5adc206114f640db91681f62ee33_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "3"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Laptop cases"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "251"
+          },
+          "parent_id": {
+            "N": "243"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/a2/a2e5973f9640d28d55d5a7466cadc09a_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "4"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Mouse pads"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "252"
+          },
+          "parent_id": {
+            "N": "5"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/61/614d2dba6d6a8923d096c41f31cd59fb_t?v=1665396615"
+          },
+          "catalog_position": {
+            "N": "16"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Home decor"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "254"
+          },
+          "parent_id": {
+            "N": "252"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/aa/aa3208330e4f4be2592a60a309a0bc2b_t?v=1665401455"
+          },
+          "catalog_position": {
+            "N": "0"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Holiday decor"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "255"
+          },
+          "parent_id": {
+            "N": "252"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/fe/fe59d5e4af63cddef7c6a91c0d93224e_t?v=1665397799"
+          },
+          "catalog_position": {
+            "N": "1"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Blankets"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "256"
+          },
+          "parent_id": {
+            "N": "252"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/5b/5b6368b6f594f2db51fe21bca00ce60b_t?v=1665397804"
+          },
+          "catalog_position": {
+            "N": "2"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Candles"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "257"
+          },
+          "parent_id": {
+            "N": "252"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/1c/1c549c51d7657e9cbbc76075b8351563_t?v=1665397810"
+          },
+          "catalog_position": {
+            "N": "3"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Bean bag covers"
+          }
+        }
+      },
+      {
+        "M": {
+          "id": {
+            "N": "258"
+          },
+          "parent_id": {
+            "N": "252"
+          },
+          "image_url": {
+            "S": "https://files.cdn.printful.com/o/upload/catalog_category/a6/a64affa00c3ea139f0bd5e8e867ec67f_t?v=1665397815"
+          },
+          "catalog_position": {
+            "N": "4"
+          },
+          "size": {
+            "S": "small"
+          },
+          "title": {
+            "S": "Pillows & pillow cases"
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,5 +1,7 @@
 const Item = require("../Item");
 const { expect } = require("chai");
+const printful = require("./fixtures/printful-categories.json");
+const printfulSerialized = require("./fixtures/printful-item.json");
 
 describe("Item.toObject", () => {
   it("works for strings", () => {
@@ -61,6 +63,12 @@ describe("Item.toObject", () => {
       L: ["a", "b", "c", 1, { key: "value" }].map(Item.fromObject),
     });
     expect(parsed).to.deep.equal(["a", "b", "c", 1, { key: "value" }]);
+  });
+
+  it("works for lists of maps", () => {
+    const key = "/categories";
+    const item = Item.toObject(printfulSerialized);
+    expect(item).to.deep.equal({ key, value: printful.result.categories });
   });
 
   it("works with maps #1", () => {
@@ -151,7 +159,6 @@ describe("Item.fromObject", () => {
     });
   });
 
-
   it("works for objects with boolean values", () => {
     let seed;
     const item = Item.fromObject({
@@ -178,6 +185,12 @@ describe("Item.fromObject", () => {
   it("works for empty strings", () => {
     const item = Item.fromObject("");
     expect(item).to.deep.equal({ S: "" });
+  });
+
+  it("works with large arrays of objects", async () => {
+    const key = "/categories";
+    const item = Item.fromObject({ key, value: printful.result.categories });
+    expect(item).to.deep.equal(printfulSerialized);
   });
 });
 

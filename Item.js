@@ -93,6 +93,9 @@ function fromObject(obj) {
   }
 
   if (Array.isArray(obj)) {
+    if (isPOJO(obj[0])) {
+      return { L: obj.map((elem) => ({ M: fromObject(elem) })) };
+    }
     return { L: obj.map(fromObject) };
   }
 
