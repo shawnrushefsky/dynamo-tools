@@ -89,7 +89,7 @@ function fromObject(obj) {
   }
 
   if (obj === null) {
-    return { NULL: null };
+    return { NULL: true };
   }
 
   if (Array.isArray(obj)) {
@@ -135,6 +135,7 @@ function isPOJO(obj) {
     !Array.isArray(obj) &&
     !Buffer.isBuffer(obj) &&
     !(obj instanceof Set) &&
+    obj !== null &&
     typeof obj === "object"
   );
 }

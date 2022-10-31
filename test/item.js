@@ -159,6 +159,23 @@ describe("Item.fromObject", () => {
     });
   });
 
+  it("works for objects with null values", () => {
+    const item = Item.fromObject({
+      name: undefined,
+      description: null,
+      public: undefined,
+      sort_key: "time_created",
+      sort_ascending: false,
+      grid_type: "standard",
+    });
+    expect(item).to.deep.equal({
+      sort_key: { S: "time_created" },
+      sort_ascending: { BOOL: false },
+      grid_type: { S: "standard" },
+      description: { NULL: true },
+    });
+  });
+
   it("works for objects with boolean values", () => {
     let seed;
     const item = Item.fromObject({

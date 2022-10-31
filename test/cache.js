@@ -127,6 +127,23 @@ describe("Cache", () => {
         value: [{ id: 1 }, { id: 2 }],
       });
     });
+
+    it("sets one item in dynamodb with null values", async () => {
+      await cache.putOne({
+        table,
+        item: { [primaryKey]: "value", something: null },
+      });
+
+      const cmd = new GetItemCommand({
+        TableName: table,
+        Key: fromObject({ [primaryKey]: "value" }),
+        ConsistentRead: true,
+      });
+      const resp = await cache.client.send(cmd);
+      expect(resp.Item).to.deep.equal(
+        fromObject({ [primaryKey]: "value", something: null })
+      );
+    });
   });
 
   describe("getOne", () => {
