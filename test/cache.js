@@ -447,6 +447,27 @@ describe("Cache", () => {
       });
     });
 
+    it("creates an object if none existed, and by default returns nothing", async () => {
+      const resp = await cache.updateOne({
+        table,
+        match: { [primaryKey]: "value" },
+        update: { something: "other3", alsoANewKey: "boop" },
+      });
+
+      expect(resp).to.be.undefined;
+
+      const item = await cache.getOne({
+        table,
+        match: { [primaryKey]: "value" },
+      });
+
+      expect(item).to.deep.equal({
+        [primaryKey]: "value",
+        something: "other3",
+        alsoANewKey: "boop",
+      });
+    });
+
     it("merges an object into an existing item, and by default returns nothing, with updates that have undefined values", async () => {
       await cache.putOne({
         table,
