@@ -9,6 +9,16 @@ describe("Item.toObject", () => {
     expect(parsed).to.equal("a string value");
   });
 
+  it("works for empty strings", () => {
+    const parsed = Item.toObject({ S: "" });
+    expect(parsed).to.equal("");
+  });
+
+  it("works for empty strings in objects", () => {
+    const parsed = Item.toObject({ neg_prompt: { S: "" } });
+    expect(parsed).to.deep.equal({ neg_prompt: "" });
+  });
+
   it("works for numbers", () => {
     const parsed = Item.toObject({ N: "12345" });
     expect(parsed).to.equal(12345);
