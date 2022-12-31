@@ -724,6 +724,37 @@ describe("Cache", () => {
         items.slice(0, 10).sort(sortByPrimaryKey)
       );
     });
+
+    it("ignores duplicate keys requested", async () => {
+      const users = ["user1", "user2", "user3"];
+      const items = [];
+      for (let i = 0; i < 100; i++) {
+        items.push({
+          [primaryKey]: `something${i}`,
+          [secondaryKey]: users[i % 3],
+          [sortKey]: i,
+          favorite: i % 2 === 0,
+        });
+      }
+
+      await cache.putMany({ table, items });
+
+      const getMany = {
+        table,
+        matches: [
+          ...items
+            .slice(0, 10)
+            .map(({ [primaryKey]: key }) => ({ [primaryKey]: key })),
+          { [primaryKey]: "something2" },
+        ],
+      };
+
+      const returnedItems = await cache.getMany(getMany);
+
+      expect(returnedItems.sort(sortByPrimaryKey)).to.deep.equal(
+        items.slice(0, 10).sort(sortByPrimaryKey)
+      );
+    });
   });
 
   describe("appendToList", () => {

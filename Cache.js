@@ -133,6 +133,15 @@ class Cache {
   }
 
   async getMany({ table, matches }) {
+    matches = matches.filter((value, index) => {
+      const _value = JSON.stringify(value);
+      return (
+        index ===
+        matches.findIndex((obj) => {
+          return JSON.stringify(obj) === _value;
+        })
+      );
+    });
     const cmd = new BatchGetItemCommand({
       RequestItems: {
         [table]: {
