@@ -230,6 +230,28 @@ describe("Cache", () => {
     });
   });
 
+  describe("deleteMany", () => {
+    it("deletes many items from dynamodb", async () => {
+      const items = [];
+      for (let i = 0; i < 100; i++) {
+        items.push({
+          [primaryKey]: `something${i}`,
+          something: `other${i * 10}`,
+        });
+      }
+
+      await cache.putMany({ table, items });
+
+      await cache.deleteMany({
+        table,
+        items: items.map((i) => ({ [primaryKey]: i[primaryKey] })),
+      });
+
+      const allItems = await cache.getAll({ table });
+      expect(allItems.length).to.equal(0);
+    });
+  });
+
   describe("getAll", () => {
     it("returns all items in a table", async () => {
       const inserts = [];

@@ -90,6 +90,10 @@ class Cache {
       last = LastEvaluatedKey;
     } while (last);
 
+    await this.deleteMany({ table, items });
+  }
+
+  async deleteMany({ table, items }) {
     const batches = this._chunk(items, 25);
     await Promise.all(
       batches.map((batch) => {
