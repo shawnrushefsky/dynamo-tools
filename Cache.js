@@ -418,8 +418,9 @@ class Cache {
           params.ExpressionAttributeNames[`#F${i}`] = filterKey;
           return Object.keys(filter[filterKey]).map((comparison, j) => {
             const value = filter[filterKey][comparison];
-            params.ExpressionAttributeValues[`:fVal${j}`] = fromObject(value);
-            return `#F${i} ${comparison} :fVal${j}`;
+            params.ExpressionAttributeValues[`:fVal${j + i}`] =
+              fromObject(value);
+            return `#F${i} ${comparison} :fVal${j + i}`;
           });
         })
         .flat()

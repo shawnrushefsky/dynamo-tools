@@ -440,6 +440,44 @@ describe("Cache", () => {
       ).size;
       expect(favoriteStates).to.equal(1);
     });
+
+    it("returns a page of items with a value in a secondary index and multiple filters", async () => {
+      const items = [];
+      for (let i = 0; i < 100; i++) {
+        items.push({
+          [primaryKey]: `something${i}`,
+          [secondaryKey]: "user1",
+          [sortKey]: i,
+          favorite: i % 2 === 0,
+          status: i % 4 === 0 ? "active" : "inactive",
+        });
+      }
+
+      await cache.putMany({ table, items });
+      const queryResults = await cache.queryPage({
+        table,
+        match: { [secondaryKey]: "user1" },
+        filter: { favorite: { "=": true }, status: { "=": "active" } },
+        limit: 12,
+      });
+
+      expect(queryResults.items.length).to.equal(3);
+
+      const totalUsersReturned = new Set(
+        queryResults.items.map((result) => result[secondaryKey])
+      ).size;
+      expect(totalUsersReturned).to.equal(1);
+
+      const favoriteStates = new Set(
+        queryResults.items.map((result) => result.favorite.toString())
+      ).size;
+      expect(favoriteStates).to.equal(1);
+
+      const statuses = new Set(
+        queryResults.items.map((result) => result.status)
+      ).size;
+      expect(statuses).to.equal(1);
+    });
   });
 
   describe("updateOne", () => {
