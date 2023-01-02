@@ -457,7 +457,7 @@ describe("Cache", () => {
       const queryResults = await cache.queryPage({
         table,
         match: { [secondaryKey]: "user1" },
-        filter: { favorite: { "=": true }, status: { "=": "active" } },
+        filter: { favorite: { "=": true }, status: { "<>": "active" } },
         limit: 12,
       });
 
@@ -475,8 +475,9 @@ describe("Cache", () => {
 
       const statuses = new Set(
         queryResults.items.map((result) => result.status)
-      ).size;
-      expect(statuses).to.equal(1);
+      );
+      expect(statuses.size).to.equal(1);
+      expect(statuses.has("inactive")).to.be.true;
     });
   });
 
